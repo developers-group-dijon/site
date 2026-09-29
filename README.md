@@ -31,7 +31,7 @@ Dans l'en-tête du fichier (front matter) :
 | `categories` | `evenements` pour un événement, `news` pour une actualité (pas les deux) |
 | `image` | Image de couverture (fichier du dossier), utilisée sur les cartes et les partages |
 | `summary` | Résumé affiché sur les cartes |
-| `evenement` | Bloc facultatif : `date`, `fin`, `horaire`, `lieu`, `inscription`, `prix`. Il affiche l'encadré « Infos pratiques » et classe l'événement dans « À venir » tant que sa date n'est pas passée. |
+| `evenement` | Bloc facultatif : `date`, `fin`, `horaire`, `lieu`, `carte` (lien sur le lieu), `places`, `inscription` (bouton « S'inscrire »), `prix`. Il affiche l'encadré « Infos pratiques » et classe l'événement dans « À venir » tant que sa date n'est pas passée. Inutile de répéter ces infos dans le texte de l'article. |
 | `outputs: ["html", "calendar"]` | Génère en plus un fichier `.ics` « Ajouter à mon agenda » (à garder avec `evenement`). |
 
 ### Mémo Asciidoc
