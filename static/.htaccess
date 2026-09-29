@@ -5,6 +5,9 @@ AddCharset UTF-8 .html .xml .ics
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  # Domaine sans www vers l'adresse canonique (www-test n'est pas concerné)
+  RewriteCond %{HTTP_HOST} ^developers-group-dijon\.fr$ [NC]
+  RewriteRule ^(.*)$ https://www.developers-group-dijon.fr/$1 [R=301,L]
   # Ancien flux RSS WordPress
   RewriteRule ^feed/?$ /index.xml [R=301,L]
   RewriteRule ^category/([^/]+)/feed/?$ /category/$1/index.xml [R=301,L]
