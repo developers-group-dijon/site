@@ -1,0 +1,20 @@
+{{- $p := . }}
+{{- $evt := in $p.Params.categories "evenements" }}
+{{- $avenir := partial "a-venir.html" $p }}
+<article class="carte{{ if $avenir }} carte--a-venir{{ end }}">
+  <div class="carte__visuel{{ if not $p.Params.image }} {{ if $evt }}dither{{ else }}band{{ end }}{{ end }}">
+    {{- with partial "cover.html" (dict "page" $p "largeur" 720) }}
+    <img src="{{ .RelPermalink }}" alt="" width="{{ .Width }}" height="{{ .Height }}" loading="lazy" decoding="async">
+    {{- end }}
+    {{- if $avenir }}<span class="tag">À venir</span>
+    {{- else if $evt }}<span class="tag">Événement</span>
+    {{- else }}<span class="tag tag--blanc">News</span>{{ end }}
+  </div>
+  <div class="carte__corps">
+    <time class="carte__date" datetime="{{ $p.Date.Format "2006-01-02" }}">
+      {{- with $p.Params.evenement }}{{ (time.AsTime .date) | time.Format ":date_long" }}{{ else }}{{ $p.Date | time.Format ":date_long" }}{{ end -}}
+    </time>
+    <h3><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+    <p>{{ or $p.Params.summary $p.Summary | plainify | htmlUnescape | truncate 160 }}</p>
+  </div>
+</article>

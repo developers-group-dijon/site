@@ -1,0 +1,90 @@
+{{ define "main" }}
+<section class="hero dither">
+  <div class="wrap">
+    <div class="carte-px">
+      <div class="surtitre">{{ .Params.accroche }}</div>
+      <h1>{{ .Params.titre_hero }}</h1>
+      <p>{{ .Params.sous_titre }}</p>
+      <div class="actions">
+        <a class="btn" href="/category/evenements/">Nos événements</a>
+        <a class="btn btn--secondaire" href="{{ site.Params.social.discord }}">Rejoindre le Discord</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{- with site.Params.devfest }}
+<section class="devfest band" aria-labelledby="devfest-titre">
+  <div class="wrap">
+    <div class="devfest__texte">
+      <div class="surtitre">L'événement phare</div>
+      <h2 id="devfest-titre">{{ .titre }}</h2>
+      <p>{{ .texte }}</p>
+    </div>
+    <div class="devfest__carte">
+      <img src="/images/logo-devfest.webp" alt="DevFest Dijon" width="220" height="92">
+      <div class="devfest__date">{{ .date }}</div>
+      <div class="devfest__lieu">{{ .lieu }}<br>{{ .adresse }}</div>
+      <a class="btn btn--petit" href="{{ .url }}">Voir le site du DevFest →</a>
+    </div>
+  </div>
+</section>
+{{- end }}
+
+<section class="section" aria-labelledby="news-titre">
+  <div class="wrap">
+    <div class="section__tete">
+      <h2 id="news-titre">Événements &amp; news</h2>
+      <a class="lien-px" href="/category/news/">Tout voir →</a>
+    </div>
+    {{- $posts := where site.RegularPages "Section" "posts" }}
+    {{- $avenir := slice }}
+    {{- range $posts }}{{ if partial "a-venir.html" . }}{{ $avenir = $avenir | append . }}{{ end }}{{ end }}
+    {{- $autres := slice }}
+    {{- range $posts }}{{ if not (in $avenir .) }}{{ $autres = $autres | append . }}{{ end }}{{ end }}
+    {{- $liste := first 3 ($avenir | append $autres) }}
+    <div class="grille">
+      {{- range $liste }}{{ partial "carte.html" . }}{{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="qui-titre">
+  <div class="wrap qui">
+    <div class="qui__texte">
+      <h2 id="qui-titre">Qui sommes-nous ?</h2>
+      {{ .Content }}
+      <a class="lien-px" href="/association/">L'équipe et l'association →</a>
+    </div>
+    <div class="chiffres">
+      <div class="chiffre"><strong>2022</strong><span>création de l'association</span></div>
+      <div class="chiffre"><strong>{{ site.Params.devfest.edition }}<sup>e</sup></strong><span>édition du DevFest</span></div>
+      <div class="chiffre"><strong>0 €</strong><span>d'adhésion</span></div>
+      <div class="chiffre"><strong>100 %</strong><span>bénévole</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="partenaires-titre">
+  <div class="wrap">
+    <h2 id="partenaires-titre" class="section__tete">Ils nous soutiennent</h2>
+    <p class="intro">Bénévolat d'entreprise, accueil d'événements, mise à disposition de compétences… L'association ne serait pas là sans eux.</p>
+    {{ partial "partenaires.html" . }}
+  </div>
+</section>
+
+<section class="cta dither" aria-labelledby="rejoindre-titre">
+  <div class="wrap">
+    <div class="carte-px">
+      <div class="cta__texte">
+        <h2 id="rejoindre-titre">Rejoignez-nous</h2>
+        <p>L'association est ouverte à toutes les structures — entreprises, startups, écoles, laboratoires, organismes publics — sans frais d'adhésion. Chacun participe quand il peut !</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="/association/#rejoignez-nous">En savoir plus</a>
+        <a class="btn btn--secondaire" href="mailto:{{ site.Params.contact }}">Nous écrire</a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

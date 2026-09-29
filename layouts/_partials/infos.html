@@ -1,0 +1,16 @@
+{{- $e := .Params.evenement }}
+{{- $avenir := partial "a-venir.html" . }}
+<aside class="infos" aria-labelledby="infos-titre">
+  <h2 id="infos-titre">Infos pratiques</h2>
+  {{- if not $avenir }}<div class="infos__passe">Événement passé</div>{{ end }}
+  <dl>
+    {{- with $e.date }}<div><dt>Date</dt><dd>{{ time.AsTime . | time.Format ":date_full" }}</dd></div>{{ end }}
+    {{- with $e.horaire }}<div><dt>Horaire</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{- with $e.lieu }}<div><dt>Lieu</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{- with $e.prix }}<div><dt>Prix</dt><dd>{{ . }}</dd></div>{{ end }}
+  </dl>
+  {{- if $avenir }}
+    {{- with $e.inscription }}<a class="btn" href="{{ . }}">S'inscrire</a>{{ end }}
+    {{- with $.OutputFormats.Get "calendar" }}<a class="infos__ics" href="{{ .RelPermalink }}">Ajouter à mon agenda (.ics)</a>{{ end }}
+  {{- end }}
+</aside>

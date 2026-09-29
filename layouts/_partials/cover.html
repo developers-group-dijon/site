@@ -1,0 +1,10 @@
+{{- /* Renvoie l'image de couverture redimensionnée (ou rien).
+       Paramètres : page, largeur. */ -}}
+{{- $img := "" }}
+{{- with .page.Params.image }}{{ $img = $.page.Resources.GetMatch . }}{{ end }}
+{{- with $img }}
+  {{- if and (in (slice "jpeg" "png" "webp" "gif") .MediaType.SubType) (gt .Width $.largeur) }}
+    {{- $img = .Resize (printf "%dx webp q80" $.largeur) }}
+  {{- end }}
+{{- end }}
+{{- return $img }}

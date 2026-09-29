@@ -1,0 +1,33 @@
+{{ define "main" }}
+{{- $evt := in .Params.categories "evenements" }}
+<section class="page-tete dither">
+  <div class="wrap">
+    <div class="ariane">
+      <a href="/">Accueil</a>
+      {{- if eq .Section "posts" }} / <a href="{{ if $evt }}/category/evenements/{{ else }}/category/news/{{ end }}">{{ if $evt }}Événements{{ else }}News{{ end }}</a>{{ end }}
+    </div>
+    <h1>{{ .Title }}</h1>
+    {{- if eq .Section "posts" }}
+    <div class="tags">
+      {{- if partial "a-venir.html" . }}<span class="tag">À venir</span>{{ end }}
+      {{- range .GetTerms "categories" }}<span class="tag{{ if ne .Page.File.Dir "categories/evenements/" }} tag--blanc{{ end }}">{{ .LinkTitle }}</span>{{ end }}
+    </div>
+    {{- end }}
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="article{{ with .Params.evenement }} article--infos{{ end }}">
+    <article class="prose">
+      {{- if eq .Section "posts" }}
+      <div class="article__meta">
+        Publié le <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+        {{- with .Params.auteur }} · {{ . }}{{ end }}
+      </div>
+      {{- end }}
+      {{ .Content }}
+    </article>
+    {{- with .Params.evenement }}{{ partial "infos.html" $ }}{{ end }}
+  </div>
+</div>
+{{ end }}

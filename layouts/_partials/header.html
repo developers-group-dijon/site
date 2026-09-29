@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Developers Group Dijon — accueil">
+      <img src="/images/logo-dgd-blanc.webp" alt="Developers Group Dijon" width="120" height="52">
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      {{- $courant := . }}
+      {{- range site.Menus.main }}
+        {{- $actif := or ($courant.IsMenuCurrent "main" .) ($courant.HasMenuCurrent "main" .) (and .URL (eq .URL $courant.RelPermalink)) }}
+        {{- if and (not $actif) $courant.IsPage (eq .URL "/category/evenements/") }}
+          {{- $actif = in $courant.Params.categories "evenements" }}
+        {{- end }}
+        <a href="{{ .URL }}"{{ if $actif }} aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{- end }}
+      <a class="btn btn--accent" href="{{ site.Params.devfest.url }}">{{ replace site.Params.devfest.titre " Dijon" "" }}</a>
+    </nav>
+  </div>
+</header>

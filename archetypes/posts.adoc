@@ -1,0 +1,34 @@
+---
+title: "{{ replace (replaceRE `^\d{4}-\d{2}-\d{2}-` "" .File.ContentBaseName) "-" " " | title }}"
+date: {{ .Date }}
+slug: "{{ replaceRE `^\d{4}-\d{2}-\d{2}-` "" .File.ContentBaseName }}"
+# "evenements" pour un événement, "news" pour une actualité (pas les deux)
+categories: ["evenements"]
+auteur: ""
+# Résumé affiché sur les cartes (sinon : début du texte)
+summary: ""
+# Image de couverture : fichier placé dans le même dossier que ce index.adoc
+image: ""
+# Pour un événement : infos pratiques + fichier .ics. Supprimez ce bloc pour une simple news.
+evenement:
+  date: "2026-12-01T18:30:00+01:00"
+  fin: "2026-12-01T21:00:00+01:00"
+  horaire: "18h30 – 21h00"
+  lieu: "Nom du lieu, adresse, Dijon"
+  inscription: "https://my.weezevent.com/..."
+  prix: "Gratuit"
+outputs: ["html", "calendar"]
+---
+
+Premier paragraphe : il sert d'introduction.
+
+== Au programme
+
+* Premier point
+* Deuxième point
+
+NOTE: Un encadré pour une information importante.
+
+image::photo.webp[Description de l'image]
+
+link:https://my.weezevent.com/...[Je m'inscris !,role=button]

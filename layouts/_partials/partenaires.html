@@ -1,0 +1,11 @@
+<ul class="partenaires">
+  {{- range site.Data.partenaires }}
+  <li>
+    {{- if .url }}
+    <a href="{{ .url }}"><img src="/images/partenaires/{{ .logo }}" alt="{{ .nom }}" loading="lazy" decoding="async"></a>
+    {{- else }}
+    <span><img src="/images/partenaires/{{ .logo }}" alt="{{ .nom }}" loading="lazy" decoding="async"></span>
+    {{- end }}
+  </li>
+  {{- end }}
+</ul>

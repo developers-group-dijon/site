@@ -1,0 +1,22 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__asso">
+      <span class="site-footer__nom">Developers Group Dijon</span>
+      <small>Association de bénévoles · Dijon</small>
+      <a href="/code-de-conduite/">Code de conduite</a>
+      <a href="mailto:{{ site.Params.contact }}">{{ site.Params.contact }}</a>
+    </div>
+    <ul class="reseaux" aria-label="Réseaux">
+      {{- with site.Params.social }}
+      <li><a href="{{ .youtube }}">YouTube</a></li>
+      <li><a href="{{ .discord }}">Discord</a></li>
+      <li><a href="{{ .linkedin }}">LinkedIn</a></li>
+      {{- end }}
+      <li><a href="/index.xml">RSS</a></li>
+    </ul>
+    <div class="site-footer__tech">
+      Propulsé par <a href="https://gohugo.io/">Hugo</a>
+      {{- if and site.Params.repo .File }}<br><a href="{{ site.Params.repo }}/edit/main/content/{{ .File.Path }}">Modifier cette page</a>{{ end }}
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,8 @@
+{{- /* Vrai si la page décrit un événement dont la date n'est pas passée. */ -}}
+{{- $ok := false }}
+{{- with .Params.evenement }}
+  {{- with .date }}
+    {{- $ok = (time.AsTime .).After now }}
+  {{- end }}
+{{- end }}
+{{- return $ok }}

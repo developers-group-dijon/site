@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="page-tete dither">
+  <div class="wrap">
+    <div class="ariane"><a href="/">Accueil</a></div>
+    <h1>{{ .Title }}</h1>
+    {{- with .Description }}<p>{{ . }}</p>{{ end }}
+  </div>
+</section>
+<div class="wrap">
+  <div class="article">
+    <article class="prose">
+      {{ .Content }}
+    </article>
+  </div>
+</div>
+<section class="section section--alt" aria-labelledby="partenaires-titre">
+  <div class="wrap">
+    <h2 id="partenaires-titre" class="section__tete">Ils nous soutiennent</h2>
+    {{ partial "partenaires.html" . }}
+  </div>
+</section>
+{{ end }}

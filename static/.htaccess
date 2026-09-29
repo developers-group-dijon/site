@@ -1,0 +1,19 @@
+# Utilisé seulement si l'hébergement tourne sous Apache (ignoré sinon).
+ErrorDocument 404 /404.html
+AddType text/calendar .ics
+AddCharset UTF-8 .html .xml .ics
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Ancien flux RSS WordPress
+  RewriteRule ^feed/?$ /index.xml [R=301,L]
+  RewriteRule ^category/([^/]+)/feed/?$ /category/$1/index.xml [R=301,L]
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+</IfModule>

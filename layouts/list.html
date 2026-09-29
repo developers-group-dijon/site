@@ -1,0 +1,39 @@
+{{ define "main" }}
+{{- $pages := .RegularPages }}
+{{- if eq .Kind "home" }}{{ $pages = where site.RegularPages "Section" "posts" }}{{ end }}
+<section class="page-tete dither">
+  <div class="wrap">
+    <div class="ariane"><a href="/">Accueil</a></div>
+    <h1>{{ .Title }}</h1>
+    {{- with .Description }}<p>{{ . }}</p>{{ end }}
+  </div>
+</section>
+<div class="wrap section">
+  {{- $avenir := slice }}
+  {{- range $pages }}{{ if partial "a-venir.html" . }}{{ $avenir = $avenir | append . }}{{ end }}{{ end }}
+  {{- with $avenir }}
+  <h2 class="sous-titre">À venir</h2>
+  <div class="grille">
+    {{- range sort . "Params.evenement.date" }}{{ partial "carte.html" . }}{{ end }}
+  </div>
+  <h2 class="sous-titre">Déjà passés</h2>
+  {{- end }}
+  {{- $reste := slice }}
+  {{- range $pages }}{{ if not (in $avenir .) }}{{ $reste = $reste | append . }}{{ end }}{{ end }}
+  {{- $pager := .Paginate $reste }}
+  <div class="grille">
+    {{- range $pager.Pages }}{{ partial "carte.html" . }}{{ end }}
+  </div>
+  {{- if gt $pager.TotalPages 1 }}
+  <nav aria-label="Pagination">
+    <ul class="pagination">
+      {{- with $pager.Prev }}<li><a href="{{ .URL }}" rel="prev">← Plus récents</a></li>{{ end }}
+      {{- range $pager.Pagers }}
+      <li{{ if eq . $pager }} class="active"{{ end }}>{{ if eq . $pager }}<span aria-current="page">{{ .PageNumber }}</span>{{ else }}<a href="{{ .URL }}">{{ .PageNumber }}</a>{{ end }}</li>
+      {{- end }}
+      {{- with $pager.Next }}<li><a href="{{ .URL }}" rel="next">Plus anciens →</a></li>{{ end }}
+    </ul>
+  </nav>
+  {{- end }}
+</div>
+{{ end }}

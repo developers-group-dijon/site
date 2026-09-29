@@ -1,0 +1,5 @@
+---
+title: "Événements"
+slug: "evenements"
+description: "Les événements du Developers Group Dijon : meetups, ateliers, conférences et DevFest."
+---
