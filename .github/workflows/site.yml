@@ -70,14 +70,21 @@ jobs:
         with:
           name: public-test
           path: public-test
-      - name: Upload ftp
-        uses: sebastianpopp/ftp-action@releases/v2
-        with:
-          host: ${{ secrets.FTP_SERVER }}
-          user: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          localDir: "public-test"
-          remoteDir: "www_test"
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+      - name: Upload sftp
+        env:
+          SFTP_HOST: ${{ secrets.FTP_SERVER }}
+          SFTP_USER: ${{ secrets.FTP_USERNAME }}
+          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        # --delete : supprime du serveur tout ce qui n'est pas dans la nouvelle version
+        run: |
+          lftp --env-password -u "$SFTP_USER" "sftp://$SFTP_HOST" <<'EOF'
+          set sftp:auto-confirm yes
+          set net:max-retries 3
+          mirror --reverse --delete --verbose --parallel=4 public-test/ www_test/
+          bye
+          EOF
 
   deploy-production:
     needs: [build, deploy-test]
@@ -95,11 +102,18 @@ jobs:
         with:
           name: public
           path: public
-      - name: Upload ftp
-        uses: sebastianpopp/ftp-action@releases/v2
-        with:
-          host: ${{ secrets.FTP_SERVER }}
-          user: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          localDir: "public"
-          remoteDir: "www"
+      - name: Install lftp
+        run: sudo apt-get update && sudo apt-get install -y lftp
+      - name: Upload sftp
+        env:
+          SFTP_HOST: ${{ secrets.FTP_SERVER }}
+          SFTP_USER: ${{ secrets.FTP_USERNAME }}
+          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        # --delete : supprime du serveur tout ce qui n'est pas dans la nouvelle version
+        run: |
+          lftp --env-password -u "$SFTP_USER" "sftp://$SFTP_HOST" <<'EOF'
+          set sftp:auto-confirm yes
+          set net:max-retries 3
+          mirror --reverse --delete --verbose --parallel=4 public/ www/
+          bye
+          EOF

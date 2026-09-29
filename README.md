@@ -9,7 +9,7 @@ Le site ne contient aucune ligne de JavaScript, aucun cookie et aucun traceur. L
 1. Créez une branche.
 2. Ajoutez ou modifiez un fichier `.adoc` (voir ci-dessous).
 3. Ouvrez une Pull Request vers `main`. La CI vérifie que le site se construit.
-4. Une fois la PR mergée, le site est publié automatiquement sur le serveur FTP.
+4. Une fois la PR mergée, le site est publié automatiquement sur le serveur en SFTP.
 
 ### Nouvel article ou événement
 
@@ -84,7 +84,7 @@ Le workflow `.github/workflows/site.yml` construit deux versions du site :
 | | Production | Test |
 |---|---|---|
 | Adresse | https://www.developers-group-dijon.fr/ | https://www-test.developers-group-dijon.fr/ |
-| Dossier sur le serveur FTP | `www` | `www_test` |
+| Dossier sur le serveur SFTP | `www` | `www_test` |
 | Publié par | un push dans `main` (donc chaque merge) | un push dans n'importe quelle branche |
 | Environnement GitHub | `production` | `test` |
 
@@ -95,7 +95,7 @@ Sur `main`, la production n'est publiée qu'après la réussite de la publicatio
 
 Le site de test n'est pas indexé par les moteurs de recherche : son `robots.txt` interdit tout. Il affiche la dernière branche poussée, quelle qu'elle soit.
 
-Les fichiers qui ne font plus partie du site ne sont pas supprimés du serveur.
+L'envoi se fait en SFTP avec `lftp mirror --delete` : après chaque publication, le dossier `www` (ou `www_test`) contient exactement le site généré. Tout autre fichier présent dans ce dossier est supprimé, y compris une ancienne installation WordPress ou un dossier `.well-known` créé par l'hébergeur.
 
 ### Configuration à faire une fois
 
@@ -103,9 +103,9 @@ Dans **Settings → Secrets and variables → Actions** du dépôt :
 
 | Secret | Contenu |
 |---|---|
-| `FTP_SERVER` | Nom du serveur, par ex. `ftp.exemple.fr` |
-| `FTP_USERNAME` | Utilisateur FTP |
-| `FTP_PASSWORD` | Mot de passe FTP |
+| `FTP_SERVER` | Nom du serveur SFTP, par ex. `ssh.exemple.fr` |
+| `FTP_USERNAME` | Utilisateur SFTP |
+| `FTP_PASSWORD` | Mot de passe SFTP |
 
 Les jobs de publication utilisent les environnements GitHub `production` et `test`. Vous pouvez y ajouter une validation manuelle ou restreindre les branches autorisées (**Settings → Environments**).
 
