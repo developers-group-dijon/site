@@ -93,7 +93,7 @@ Le workflow `.github/workflows/site.yml` construit deux versions du site :
 
 Sur `main`, la production n'est publiée qu'après la réussite de la publication en test.
 
-Le site de test n'est pas indexé par les moteurs de recherche : son `robots.txt` interdit tout. Il affiche la dernière branche poussée, quelle qu'elle soit.
+Le site de test est protégé par un identifiant et un mot de passe (authentification Apache), et n'est pas indexé par les moteurs de recherche : son `robots.txt` interdit tout. Il affiche la dernière branche poussée, quelle qu'elle soit.
 
 L'envoi se fait en SFTP avec `lftp mirror --delete` : après chaque publication, le dossier `www` (ou `www_test`) contient exactement le site généré. Tout autre fichier présent dans ce dossier est supprimé, y compris une ancienne installation WordPress ou un dossier `.well-known` créé par l'hébergeur.
 
@@ -106,6 +106,16 @@ Dans **Settings → Secrets and variables → Actions** du dépôt :
 | `FTP_SERVER` | Nom du serveur SFTP, par ex. `ssh.exemple.fr` |
 | `FTP_USERNAME` | Utilisateur SFTP |
 | `FTP_PASSWORD` | Mot de passe SFTP |
+| `TEST_AUTH_USER` | Identifiant pour accéder au site de test |
+| `TEST_AUTH_PASSWORD` | Mot de passe pour accéder au site de test |
+
+Et dans l'onglet *Variables* :
+
+| Variable | Contenu |
+|---|---|
+| `TEST_HTPASSWD_PATH` | Chemin **absolu** sur le serveur du fichier `www_test/.htpasswd`, par ex. `/home/compte/www_test/.htpasswd` |
+
+Le workflow génère `.htpasswd` (mot de passe haché en bcrypt) et ajoute l'authentification au `.htaccess` du site de test au moment du déploiement : ni le mot de passe ni son hash ne sont dans le dépôt. Apache exige un chemin absolu pour `AuthUserFile` ; il est souvent indiqué dans l'espace client de l'hébergeur.
 
 Les jobs de publication utilisent les environnements GitHub `production` et `test`. Vous pouvez y ajouter une validation manuelle ou restreindre les branches autorisées (**Settings → Environments**).
 
