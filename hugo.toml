@@ -1,0 +1,96 @@
+baseURL = "https://developers-group-dijon.fr/"
+languageCode = "fr-FR"
+defaultContentLanguage = "fr"
+title = "Developers Group Dijon"
+enableRobotsTXT = true
+timeZone = "Europe/Paris"
+disableKinds = ["taxonomy"]
+
+[taxonomies]
+  category = "categories"
+
+# Mêmes URL que l'ancien site WordPress : /mon-article/ et /category/news/
+[permalinks.page]
+  posts = "/:slug/"
+[permalinks.term]
+  categories = "/category/:slug/"
+
+[pagination]
+  pagerSize = 12
+
+[outputs]
+  home = ["html", "rss"]
+  page = ["html"]
+  section = ["html"]
+  term = ["html", "rss"]
+
+[services.rss]
+  limit = 20
+
+[markup.asciidocExt]
+  backend = "html5"
+  safeMode = "unsafe"
+  workingFolderCurrent = true
+  noHeaderOrFooter = true
+  failureLevel = "fatal"
+  [markup.asciidocExt.attributes]
+    idprefix = ""
+    idseparator = "-"
+    source-highlighter = "rouge"
+    rouge-css = "class"
+    rouge-style = "github"
+    icons = ""
+    caution-caption = "Attention"
+    important-caption = "Important"
+    note-caption = "Note"
+    tip-caption = "Astuce"
+    warning-caption = "Avertissement"
+    figure-caption = ""
+    table-caption = ""
+    example-caption = ""
+    listing-caption = ""
+
+[security.exec]
+  allow = ["^asciidoctor$", "^git$", "^go$"]
+
+[minify]
+  minifyOutput = true
+
+[params]
+  description = "Association de bénévoles qui fédère et anime la communauté des développeur·euse·s de la région dijonnaise."
+  contact = "developers.group.dijon@gmail.com"
+  repo = "" # ex. "https://github.com/ORGANISATION/site" : active le lien « Modifier cette page »
+  mainSections = ["posts"]
+
+  [params.social]
+    youtube = "https://www.youtube.com/@developersgroupdijon3650"
+    discord = "https://discord.gg/Pp6pHUUBXd"
+    linkedin = "https://www.linkedin.com/company/developers-group-dijon/"
+
+  # Bandeau DevFest de la page d'accueil : à mettre à jour chaque année
+  [params.devfest]
+    titre = "DevFest Dijon 2026"
+    date = "Ven. 4 déc. 2026"
+    lieu = "UFR Sciences et Techniques"
+    adresse = "Campus Mirande, Dijon"
+    texte = "Le plus grand festival dédié aux développeurs de Bourgogne-Franche-Comté : conférences, ateliers et rencontres toute la journée."
+    url = "https://devfest.developers-group-dijon.fr/"
+    edition = "5"
+
+[menus]
+  [[menus.main]]
+    name = "L'asso"
+    pageRef = "/association"
+    weight = 10
+  [[menus.main]]
+    name = "Événements"
+    url = "/category/evenements/"
+    weight = 20
+  [[menus.main]]
+    name = "News"
+    url = "/category/news/"
+    weight = 30
+  [[menus.main]]
+    name = "Rejoindre"
+    url = "/association/#rejoignez-nous"
+    weight = 40
