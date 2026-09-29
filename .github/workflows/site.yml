@@ -77,8 +77,15 @@ jobs:
           SFTP_HOST: ${{ secrets.FTP_SERVER }}
           SFTP_USER: ${{ secrets.FTP_USERNAME }}
           LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          ENV_NAME: test
         # --delete : supprime du serveur tout ce qui n'est pas dans la nouvelle version
         run: |
+          for v in SFTP_HOST SFTP_USER LFTP_PASSWORD; do
+            if [ -z "${!v}" ]; then
+              echo "::error::$v est vide : secret absent de l'environnement GitHub « $ENV_NAME » ou du dépôt"
+              exit 1
+            fi
+          done
           lftp --env-password -u "$SFTP_USER" "sftp://$SFTP_HOST" <<'EOF'
           set sftp:auto-confirm yes
           set net:max-retries 3
@@ -109,8 +116,15 @@ jobs:
           SFTP_HOST: ${{ secrets.FTP_SERVER }}
           SFTP_USER: ${{ secrets.FTP_USERNAME }}
           LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          ENV_NAME: production
         # --delete : supprime du serveur tout ce qui n'est pas dans la nouvelle version
         run: |
+          for v in SFTP_HOST SFTP_USER LFTP_PASSWORD; do
+            if [ -z "${!v}" ]; then
+              echo "::error::$v est vide : secret absent de l'environnement GitHub « $ENV_NAME » ou du dépôt"
+              exit 1
+            fi
+          done
           lftp --env-password -u "$SFTP_USER" "sftp://$SFTP_HOST" <<'EOF'
           set sftp:auto-confirm yes
           set net:max-retries 3
