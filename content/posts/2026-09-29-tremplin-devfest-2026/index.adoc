@@ -3,7 +3,7 @@ title: "Tremplin DevFest 2026"
 date: 2026-09-29T10:00:00+02:00
 slug: "tremplin-devfest-2026"
 categories: ["evenements"]
-auteur: ""
+auteur: "Guillaume Poittevin"
 image: "tremplin-devfest-2026.webp"
 summary: "Mercredi 4 novembre chez BPCE-SI : cinq primo-speakers coachés par CraftsRecords montent sur scène, et le public choisit les deux short-tracks du DevFest Dijon 2026. 50 places, inscription obligatoire."
 evenement:
@@ -11,7 +11,7 @@ evenement:
   fin: "2026-11-04T19:30:00+01:00"
   horaire: "16h30 – 19h30 (talks à partir de 16h45)"
   lieu: "BPCE-SI, 13 bis avenue Albert 1er, Dijon"
-  # inscription: "https://..."  (lien à ajouter, il fait apparaître le bouton « S'inscrire »)
+  inscription: "https://my.weezevent.com/tremplin-devfest-2026"
   prix: "Gratuit"
 outputs: ["html", "calendar"]
 ---
@@ -42,5 +42,7 @@ Les sujets et les speakers seront dévoilés prochainement.
 link:https://www.openstreetmap.org/search?query=13+bis+Av.+Albert+1er,+21000+Dijon[Voir sur la carte,role=map]
 
 IMPORTANT: *Inscription obligatoire.* L'entrée dans les locaux de BPCE-SI se fait avec un badge nominatif. Lors de votre inscription, indiquez vos nom, prénom et, si possible, votre entreprise ou votre école.
+
+link:https://my.weezevent.com/tremplin-devfest-2026[Je m'inscris !,role=button]
 
 Le bâtiment ferme à 19h30 : tout le monde devra être sorti à cette heure-là.
