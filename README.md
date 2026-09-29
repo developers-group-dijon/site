@@ -1,6 +1,6 @@
 # Site du Developers Group Dijon
 
-Site statique de [developers-group-dijon.fr](https://developers-group-dijon.fr/), généré avec [Hugo](https://gohugo.io/). Les contenus sont écrits en [Asciidoc](https://docs.asciidoctor.org/asciidoc/latest/).
+Site statique de [www.developers-group-dijon.fr](https://www.developers-group-dijon.fr/), généré avec [Hugo](https://gohugo.io/). Les contenus sont écrits en [Asciidoc](https://docs.asciidoctor.org/asciidoc/latest/).
 
 Le site ne contient aucune ligne de JavaScript, aucun cookie et aucun traceur. La charte graphique reprend celle du DevFest Dijon 2026.
 
@@ -83,7 +83,7 @@ Le workflow `.github/workflows/site.yml` construit deux versions du site :
 
 | | Production | Test |
 |---|---|---|
-| Adresse | https://developers-group-dijon.fr/ | https://www-test.developers-group-dijon.fr/ |
+| Adresse | https://www.developers-group-dijon.fr/ | https://www-test.developers-group-dijon.fr/ |
 | Dossier sur le serveur FTP | `www` | `www_test` |
 | Publié par | un push dans `main` (donc chaque merge) | un push dans n'importe quelle branche |
 | Environnement GitHub | `production` | `test` |
