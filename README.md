@@ -9,7 +9,7 @@ Le site ne contient aucune ligne de JavaScript, aucun cookie et aucun traceur. L
 1. Créez une branche.
 2. Ajoutez ou modifiez un fichier `.adoc` (voir ci-dessous).
 3. Ouvrez une Pull Request vers `main`. La CI vérifie que le site se construit.
-4. Une fois la PR mergée, le site est publié automatiquement sur le serveur SFTP.
+4. Une fois la PR mergée, le site est publié automatiquement sur le serveur FTP.
 
 ### Nouvel article ou événement
 
@@ -81,27 +81,21 @@ hugo --gc            # construit le site dans public/
 
 Le workflow `.github/workflows/site.yml` :
 
-- **Sur chaque PR vers `main`** : construit le site et vérifie qu'aucun JavaScript n'est publié.
-- **Sur chaque push dans `main`** (donc chaque merge) : construit le site, puis l'envoie sur le serveur SFTP avec `lftp mirror`.
+- **Sur chaque PR vers `main`** : construit le site.
+- **Sur chaque push dans `main`** (donc chaque merge) : construit le site, puis envoie le dossier `public/` dans le dossier `www` du serveur FTP.
 - **À la demande** : bouton « Run workflow » dans l'onglet Actions.
+
+Les fichiers qui ne font plus partie du site ne sont pas supprimés du serveur.
 
 ### Configuration à faire une fois
 
 Dans **Settings → Secrets and variables → Actions** du dépôt :
 
-| Secret | Obligatoire | Contenu |
-|---|---|---|
-| `SFTP_HOST` | oui | Nom du serveur, par ex. `ftp.exemple.fr` |
-| `SFTP_USER` | oui | Utilisateur SFTP |
-| `SFTP_REMOTE_DIR` | oui | Dossier de destination sur le serveur, par ex. `/www` |
-| `SFTP_PRIVATE_KEY` | l'un des deux | Clé privée SSH (recommandé) |
-| `SFTP_PASSWORD` | l'un des deux | Mot de passe, si pas de clé |
-| `SFTP_PORT` | non | Port, `22` par défaut |
-| `SFTP_KNOWN_HOSTS` | recommandé | Empreinte du serveur : sortie de `ssh-keyscan -p 22 ftp.exemple.fr` |
-
-La variable (onglet *Variables*, pas *Secrets*) `SFTP_DELETE` vaut `true` pour supprimer sur le serveur les fichiers qui ne font plus partie du site.
-
-> ⚠️ **Avant d'activer `SFTP_DELETE`**, vérifiez que `SFTP_REMOTE_DIR` ne contient que le site. Tout le reste de ce dossier serait supprimé, y compris une ancienne installation WordPress.
+| Secret | Contenu |
+|---|---|
+| `FTP_SERVER` | Nom du serveur, par ex. `ftp.exemple.fr` |
+| `FTP_USERNAME` | Utilisateur FTP |
+| `FTP_PASSWORD` | Mot de passe FTP |
 
 Le job de publication utilise l'environnement GitHub `production`. Vous pouvez y ajouter une validation manuelle ou restreindre la publication à la branche `main` (**Settings → Environments**).
 

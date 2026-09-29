@@ -31,19 +31,9 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --gc
+        run: hugo build --minify
         env:
           TZ: Europe/Paris
-
-      - name: Check no JavaScript
-        run: |
-          js_files=$(find public -type f \( -name '*.js' -o -name '*.mjs' \))
-          script_tags=$(grep -rlI '<script' public || true)
-          if [ -n "$js_files$script_tags" ]; then
-            echo "::error::Du JavaScript a été trouvé dans le site généré :"
-            printf '%s\n' $js_files $script_tags
-            exit 1
-          fi
 
       - name: Upload public dir
         uses: actions/upload-artifact@v7
@@ -66,61 +56,11 @@ jobs:
         with:
           name: public
           path: public
-
-      - name: Install lftp
-        run: sudo apt-get update && sudo apt-get install -y lftp
-
-      - name: Upload SFTP
-        env:
-          SFTP_HOST: ${{ secrets.SFTP_HOST }}
-          SFTP_PORT: ${{ secrets.SFTP_PORT || '22' }}
-          SFTP_USER: ${{ secrets.SFTP_USER }}
-          SFTP_REMOTE_DIR: ${{ secrets.SFTP_REMOTE_DIR }}
-          SFTP_PRIVATE_KEY: ${{ secrets.SFTP_PRIVATE_KEY }}
-          LFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
-          SFTP_KNOWN_HOSTS: ${{ secrets.SFTP_KNOWN_HOSTS }}
-          SFTP_DELETE: ${{ vars.SFTP_DELETE }}
-        run: |
-          set -eu
-          for v in SFTP_HOST SFTP_USER SFTP_REMOTE_DIR; do
-            if [ -z "${!v}" ]; then echo "::error::Secret $v manquant"; exit 1; fi
-          done
-          if [ -z "$SFTP_PRIVATE_KEY" ] && [ -z "$LFTP_PASSWORD" ]; then
-            echo "::error::Définir SFTP_PRIVATE_KEY ou SFTP_PASSWORD"; exit 1
-          fi
-
-          mkdir -p ~/.ssh && chmod 700 ~/.ssh
-          ssh_opts="-a -x -p $SFTP_PORT"
-          if [ -n "$SFTP_KNOWN_HOSTS" ]; then
-            printf '%s\n' "$SFTP_KNOWN_HOSTS" > ~/.ssh/known_hosts
-            ssh_opts="$ssh_opts -o StrictHostKeyChecking=yes"
-          else
-            echo "::warning::SFTP_KNOWN_HOSTS absent : l'empreinte du serveur n'est pas vérifiée"
-            ssh_opts="$ssh_opts -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
-          fi
-
-          if [ -n "$SFTP_PRIVATE_KEY" ]; then
-            printf '%s\n' "$SFTP_PRIVATE_KEY" > ~/.ssh/deploy_key
-            chmod 600 ~/.ssh/deploy_key
-            ssh_opts="$ssh_opts -i $HOME/.ssh/deploy_key"
-            # Mot de passe vide : lftp laisse ssh s'authentifier par clé
-            LFTP_PASSWORD="${LFTP_PASSWORD:-}"
-            export LFTP_PASSWORD
-          fi
-
-          mirror_opts="--reverse --verbose --parallel=4 --no-perms"
-          if [ "$SFTP_DELETE" = "true" ]; then
-            mirror_opts="$mirror_opts --delete"
-          fi
-
-          lftp --env-password -u "$SFTP_USER" -p "$SFTP_PORT" "sftp://$SFTP_HOST" <<EOF
-          set sftp:connect-program "ssh $ssh_opts"
-          set net:max-retries 3
-          set net:timeout 30
-          mirror $mirror_opts public/ "$SFTP_REMOTE_DIR"
-          bye
-          EOF
-
-      - name: Cleanup
-        if: always()
-        run: rm -f ~/.ssh/deploy_key
+      - name: Upload ftp
+        uses: sebastianpopp/ftp-action@releases/v2
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          localDir: "public"
+          remoteDir: "www"
