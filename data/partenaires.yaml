@@ -1,0 +1,34 @@
+# Partenaires affichés sur l'accueil et la page « L'association ».
+# logo : fichier dans static/images/partenaires/
+- nom: Atol CD
+  url: https://atolcd.com
+  logo: atolcd.webp
+- nom: APRR
+  url: https://voyage.aprr.fr/
+  logo: aprr.webp
+- nom: Alteca
+  url: https://www.alteca.fr/
+  logo: alteca.webp
+- nom: Cpage
+  url: https://www.cpage.fr/
+  logo: cpage.webp
+- nom: Dijon Métropole
+  url: https://www.metropole-dijon.fr/
+  logo: dijon-metropole.webp
+- nom: DIIAGE
+  url: https://diiage.cucdb.fr/
+  logo: diiage.webp
+- nom: Osanah communication
+  url: https://osanah-communication.fr/
+  logo: osanah.webp
+- nom: Cadoles
+  url: https://www.cadoles.com/
+  logo: cadoles.webp
+- nom: Owlnext
+  url: https://owlnext.fr/
+  logo: owlnext.webp
+- nom: Garganttua
+  url: https://garganttua.com/
+  logo: garganttua.webp
+- nom: Google Developer Groups
+  logo: gdg.webp
