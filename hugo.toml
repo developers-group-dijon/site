@@ -39,7 +39,6 @@ disableKinds = ["taxonomy"]
     source-highlighter = "rouge"
     rouge-css = "class"
     rouge-style = "github"
-    icons = ""
     caution-caption = "Attention"
     important-caption = "Important"
     note-caption = "Note"
