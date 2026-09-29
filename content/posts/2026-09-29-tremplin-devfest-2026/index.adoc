@@ -11,6 +11,8 @@ evenement:
   fin: "2026-11-04T19:30:00+01:00"
   horaire: "16h30 – 19h30 (talks à partir de 16h45)"
   lieu: "BPCE-SI, 13 bis avenue Albert 1er, Dijon"
+  carte: "https://www.openstreetmap.org/search?query=13+bis+Av.+Albert+1er,+21000+Dijon"
+  places: "50 maximum"
   inscription: "https://my.weezevent.com/tremplin-devfest-2026"
   prix: "Gratuit"
 outputs: ["html", "calendar"]
@@ -30,19 +32,10 @@ L'événement est accueilli par https://www.bpce-si.fr/[*BPCE-SI*], que nous rem
 * *Vote du public* : il désigne les *deux short-tracks* qui seront présentés au DevFest Dijon 2026, le vendredi 4 décembre
 * *Temps convivial* autour d'une collation offerte par BPCE-SI, jusqu'à 19h30
 
+Le bâtiment ferme à 19h30 : tout le monde devra être sorti à cette heure-là.
+
 Les sujets et les speakers seront dévoilés prochainement.
 
-== Infos pratiques
+== Inscription
 
-* *Date* : mercredi 4 novembre 2026
-* *Horaires* : accueil à 16h30, talks à partir de 16h45, fin à 19h30
-* *Lieu* : BPCE-SI, 13 bis avenue Albert 1er, Dijon
-* *Places* : 50 maximum
-
-link:https://www.openstreetmap.org/search?query=13+bis+Av.+Albert+1er,+21000+Dijon[Voir sur la carte,role=map]
-
-IMPORTANT: *Inscription obligatoire.* L'entrée dans les locaux de BPCE-SI se fait avec un badge nominatif. Lors de votre inscription, indiquez vos nom, prénom et, si possible, votre entreprise ou votre école.
-
-link:https://my.weezevent.com/tremplin-devfest-2026[Je m'inscris !,role=button]
-
-Le bâtiment ferme à 19h30 : tout le monde devra être sorti à cette heure-là.
+IMPORTANT: *Inscription obligatoire, 50 places.* L'entrée dans les locaux de BPCE-SI se fait avec un badge nominatif. Lors de votre inscription, indiquez vos nom, prénom et, si possible, votre entreprise ou votre école.
