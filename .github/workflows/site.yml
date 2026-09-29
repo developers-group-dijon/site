@@ -70,8 +70,32 @@ jobs:
         with:
           name: public-test
           path: public-test
-      - name: Install lftp
-        run: sudo apt-get update && sudo apt-get install -y lftp
+      - name: Install lftp and htpasswd
+        run: sudo apt-get update && sudo apt-get install -y lftp apache2-utils
+      - name: Protect with password
+        env:
+          AUTH_USER: ${{ secrets.TEST_AUTH_USER }}
+          AUTH_PASSWORD: ${{ secrets.TEST_AUTH_PASSWORD }}
+          HTPASSWD_PATH: ${{ secrets.TEST_HTPASSWD_PATH }}
+        run: |
+          for v in AUTH_USER AUTH_PASSWORD HTPASSWD_PATH; do
+            if [ -z "${!v}" ]; then
+              echo "::error::$v est vide : secret ou variable absent de l'environnement GitHub « test » ou du dépôt"
+              exit 1
+            fi
+          done
+          printf '%s\n' "$AUTH_PASSWORD" | htpasswd -niB -C 12 "$AUTH_USER" > public-test/.htpasswd
+          cat >> public-test/.htaccess <<EOF
+
+          # Site de test protégé par mot de passe (ajouté par le workflow)
+          AuthType Basic
+          AuthName "Site de test"
+          AuthUserFile $HTPASSWD_PATH
+          Require valid-user
+          <Files ".htpasswd">
+            Require all denied
+          </Files>
+          EOF
       - name: Upload sftp
         env:
           SFTP_HOST: ${{ secrets.FTP_SERVER }}
