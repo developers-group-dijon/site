@@ -79,11 +79,21 @@ hugo --gc            # construit le site dans public/
 
 ## Publication automatique (GitHub Actions)
 
-Le workflow `.github/workflows/site.yml` :
+Le workflow `.github/workflows/site.yml` construit deux versions du site :
 
-- **Sur chaque PR vers `main`** : construit le site.
-- **Sur chaque push dans `main`** (donc chaque merge) : construit le site, puis envoie le dossier `public/` dans le dossier `www` du serveur FTP.
-- **À la demande** : bouton « Run workflow » dans l'onglet Actions.
+| | Production | Test |
+|---|---|---|
+| Adresse | https://developers-group-dijon.fr/ | https://www-test.developers-group-dijon.fr/ |
+| Dossier sur le serveur FTP | `www` | `www_test` |
+| Publié par | un push dans `main` (donc chaque merge) | un push dans n'importe quelle branche |
+| Environnement GitHub | `production` | `test` |
+
+- **Sur chaque PR vers `main`** : construit le site, sans le publier.
+- **À la demande** : bouton « Run workflow » dans l'onglet Actions (publie en test, et aussi en production si la branche choisie est `main`).
+
+Sur `main`, la production n'est publiée qu'après la réussite de la publication en test.
+
+Le site de test n'est pas indexé par les moteurs de recherche : son `robots.txt` interdit tout. Il affiche la dernière branche poussée, quelle qu'elle soit.
 
 Les fichiers qui ne font plus partie du site ne sont pas supprimés du serveur.
 
@@ -97,7 +107,7 @@ Dans **Settings → Secrets and variables → Actions** du dépôt :
 | `FTP_USERNAME` | Utilisateur FTP |
 | `FTP_PASSWORD` | Mot de passe FTP |
 
-Le job de publication utilise l'environnement GitHub `production`. Vous pouvez y ajouter une validation manuelle ou restreindre la publication à la branche `main` (**Settings → Environments**).
+Les jobs de publication utilisent les environnements GitHub `production` et `test`. Vous pouvez y ajouter une validation manuelle ou restreindre les branches autorisées (**Settings → Environments**).
 
 ## Migration depuis WordPress
 

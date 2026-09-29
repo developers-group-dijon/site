@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [main]
   push:
-    branches: [main]
+    branches: ['**']
   workflow_dispatch:
 
 permissions:
@@ -30,8 +30,13 @@ jobs:
           hugo-version: '0.166.0'
           extended: true
 
-      - name: Build
+      - name: Build production
         run: hugo build --minify
+        env:
+          TZ: Europe/Paris
+
+      - name: Build test
+        run: hugo build --minify --environment test --baseURL https://www-test.developers-group-dijon.fr/ --destination public-test
         env:
           TZ: Europe/Paris
 
@@ -42,8 +47,40 @@ jobs:
           path: public
           retention-days: 7
 
-  deploy:
+      - name: Upload public-test dir
+        uses: actions/upload-artifact@v7
+        with:
+          name: public-test
+          path: public-test
+          retention-days: 7
+
+  deploy-test:
     needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-26.04
+    environment:
+      name: test
+      url: https://www-test.developers-group-dijon.fr/
+    concurrency:
+      group: deploy-test
+      cancel-in-progress: false
+    steps:
+      - name: Download public-test dir
+        uses: actions/download-artifact@v8
+        with:
+          name: public-test
+          path: public-test
+      - name: Upload ftp
+        uses: sebastianpopp/ftp-action@releases/v2
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          localDir: "public-test"
+          remoteDir: "www_test"
+
+  deploy-production:
+    needs: [build, deploy-test]
     if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-26.04
     environment: production
