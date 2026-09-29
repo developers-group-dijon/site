@@ -1,0 +1,10 @@
+---
+title: "Developers Group Dijon"
+accroche: "Association · depuis juin 2022"
+titre_hero: "Fédérer et animer la communauté des développeur·euse·s de Dijon"
+sous_titre: "Des événements réguliers pour échanger et partager nos expériences — et chaque année, le DevFest Dijon."
+---
+
+Créé en juin 2022 à l'initiative de Dijon Métropole et d'une quinzaine d'acteurs du numérique locaux, le Developers Group Dijon est une association de bénévoles ayant pour vocation de fédérer et animer la communauté des développeur·euse·s de la région dijonnaise.
+
+Elle organise des événements réguliers pour leur permettre d'échanger et de partager leur expérience.

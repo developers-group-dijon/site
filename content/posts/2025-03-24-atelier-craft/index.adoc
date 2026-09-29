@@ -1,0 +1,34 @@
+---
+title: "2025-09-23 Atelier Craft"
+date: "2025-03-24T21:52:23"
+lastmod: "2025-09-26T11:30:51"
+slug: "2025-09-atelier-craft"
+categories: ["evenements"]
+auteur: "Allan Cruchaudet"
+summary: "23 Septembre 2025 – Atelier Craft Le prochain événement du Developers Group Dijon est prévu mardi 23 septembre 2025 au CUCDB – Centre Universitaire Catholique De Bourgogne – Diiage et c’est un atelier Craft ! 👾 L’idée ?…"
+image: "atelier-craft-developers-group.webp"
+---
+
+image::bandeau-atelier-craft-developers-group.webp[]
+
+== 23 Septembre 2025 - Atelier Craft
+
+Le prochain événement du https://www.linkedin.com/company/developers-group-dijon/[Developers Group Dijon] est prévu mardi 23 septembre 2025 au https://www.linkedin.com/company/cucdb-centre-universitaire-catholique-de-bourgogne/[CUCDB – Centre Universitaire Catholique De Bourgogne] – https://www.linkedin.com/company/diiage/[Diiage] et c’est un atelier Craft !
+
+👾 L’idée ? Après 30 minutes de présentation, place au dév !
+
+👀 La pratique du «Software Craftmanship» («Artisanat du logiciel») est une approche pour essayer de produire de meilleurs logiciels, bien conçus, plus maintenables et plus simples.
+
+Lors de cet événement nous accueillerons https://www.linkedin.com/in/ACoAABA9E5ABV4Ko2QyCK_cjpvFSYzk-S4AD1mc[🎵 Sylvain Coudert 🎶], qui viendra nous en parler, mais pas seulement, vous pourrez aussi mettre en œuvre, notamment au travers de Kata.
+
+💬 Pour cet événement mêlant mi-théorie et mi-pratique, vous serez reçu dans les locaux du https://www.linkedin.com/company/diiage/[Diiage], avec votre ordinateur. Les pré-requis vous seront transmis dans le jours qui précédent.
+
+🍻 Un temps convivial conclura cette fin d’après-midi.
+
+*Date* : 23 Septembre 2025 +
+*Horaires : À partir* de 16 h 30 +
+*Lieu* : 69 Avenue Aristide Briand – CUCDB
+
+link:https://www.openstreetmap.org/search?query=CUCDB+dijon[Voir sur la carte,role=map]
+
+link:https://my.weezevent.com/2025-09-atelier-craft[Je m'inscris !,role=button]

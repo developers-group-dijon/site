@@ -1,0 +1,30 @@
+---
+title: "DevFest 2023 : Retour en vidéo"
+date: "2024-01-23T15:24:23"
+lastmod: "2024-01-23T15:24:23"
+slug: "devfest-2023-retour-en-video"
+categories: ["news"]
+auteur: "Allan Cruchaudet"
+summary: "Le vendredi 8 Décembre se déroulait la deuxième édition du DevFest Dijonnais ! Ce grand événement, mené par le Developers Group Dijon a rencontré un franc succès : 300 professionnels de l’informatique ont pu assister…"
+image: "vignette-retour-video-devfest-2023.webp"
+---
+
+Le vendredi 8 Décembre se déroulait la deuxième édition du DevFest Dijonnais ! Ce grand événement, mené par le Developers Group Dijon a rencontré un franc succès : 300 professionnels de l’informatique ont pu assister toute la journée à des conférences, short tracks, se promener sur notre village entreprise, profiter de bornes d’arcade, …
+
+== Cette deuxième édition en chiffres :
+
+Le DevFest 2023 cest :
+
+* 300 participant-es !
+* 15 speakers
+* 14 conférences et short tracks
+* 1 super lieu Eseo Dijon
+* 8 entreprises sur le Village Entreprises
+* 7 sponsors et soutiens
+* Un staff de 11 personnes
+* 23 réunions d’organisation pour la team Developers Group Dijon, soit l’équivalent de … quelques heures !
+* Une partie du buffet distribuée à l’association étudiante du Campus ainsi qu’aux Resto du cœur
+
+L’équipe du Developers Group Dijon est fière d’avoir pu vous proposer cette deuxième édition du DevFest Dijon, mais trêve de blabla, découvrez le récap de cette deuxième édition en vidéo !
+
+link:https://www.youtube.com/watch?v=LrJvB77NJK4[Regarder la vidéo sur YouTube,role=video]

@@ -1,0 +1,18 @@
+---
+title: "Summer Live Coding !"
+date: "2023-07-10T10:26:01"
+lastmod: "2023-07-10T10:30:40"
+slug: "summer-live-coding"
+categories: ["news"]
+auteur: "Jean-Philippe BENADJER"
+summary: "Adrien de Owlnext, membre actif du Developers Group Dijon vous propose un summer live coding : rdv tous les mercredis après-midi de l’été pour un live de 3-4h. Et ça commence mercredi 12 juillet à 14h30 ! Le live sera…"
+image: "Illustration-codingsummer.webp"
+---
+
+Adrien de https://www.linkedin.com/company/owlnext/[Owlnext], membre actif du https://www.linkedin.com/company/developers-group-dijon/[Developers Group Dijon] vous propose un *summer live coding* : rdv tous les mercredis après-midi de l’été pour un live de 3-4h. Et ça commence *mercredi 12 juillet à 14h30 !*
+
+Le live sera dédié au projet *HERMES* (High-speed Engine for Rust Microserver Experience in Static-serving) qui consiste à créer un serveur HTTP simple qui puisse servir des sites statiques ou pré-générés avec une couche d’authentification légère. La particularité c’est qu’il devra servir ces sites statiques selon des sous-domaines et que l’authentification devra se faire justement par sous-domaine.
+
+**Les technos utilisées :* https://www.linkedin.com/feed/hashtag/?keywords=rust&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7082250355685605376[#Rust], framework https://www.linkedin.com/feed/hashtag/?keywords=rocket&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7082250355685605376[#Rocket], base de données https://www.linkedin.com/feed/hashtag/?keywords=surrealdb&highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7082250355685605376[#SurrealDB], le projet sera ensuite conteneurisé pour être déployé facilement.*
+
+link:https://youtube.com/live/oWbc6yqdBwQ?feature=share[vous venez ? VOici le lien du live,role=button]

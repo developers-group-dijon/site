@@ -1,0 +1,37 @@
+---
+title: "2025-06 Pitch Party"
+date: "2025-03-21T09:00:33"
+lastmod: "2025-07-11T11:53:06"
+slug: "2025-06-pitch-party"
+categories: ["evenements"]
+auteur: "Xavier Calland"
+summary: "17 Juin 2025 – Pitch Party Le Developers Group Dijon revient avec la deuxième édition de son Pitch Party ! 📢 Rendez-vous le mardi 17 juin 2025 à 16h30 dans les locaux de CPage (21 ter Av. Françoise Giroud, 21000 Dijon)…"
+image: "Vignette-Pitch-Party.webp"
+---
+
+image::header-pitch-party.webp[]
+
+== 17 Juin 2025 - Pitch Party
+
+Le Developers Group Dijon revient avec la deuxième édition de son Pitch Party ! 📢 +
+Rendez-vous le *mardi 17 juin 2025 à 16h30* dans les locaux de *CPage* (21 ter Av. Françoise Giroud, 21000 Dijon)
+
+🎤 Envie de prendre la parole ? Vous avez 5 minutes pour partager : +
+💡 Une techno qui vous passionne +
+🏆 Une success story qui mérite d’être racontée +
+🔥 Votre BTF (Best Techno Forever) +
+🛠️ Un outil qui vous a sauvé la mise… ou au contraire, un fail retentissant !
+
+L’objectif : apprendre et échanger ! Même un échec à son intérêt : comment avez-vous rebondi ? Quelles leçons en avez-vous tirées ? 🤔
+
+Prêt·e à pitcher ? Inscrivez-vous dès maintenant ! 👉
+
+link:https://docs.google.com/forms/d/e/1FAIpQLSeSr6Qv8FgLxlAye6CJGSNB44QJd3aW8Tfa4sD6MdaxVj2qSw/viewform[Proposer un sujet,role=button]
+
+*Date* : mardi 17 juin 2025 +
+*Horaires :* 16h30 +
+*Lieu* : CPage – 21 ter Av. Françoise Giroud
+
+link:https://www.openstreetmap.org/search?query=cpage,+21+ter+Av.+Françoise+Giroud,+dijon[Voir sur la carte,role=map]
+
+link:https://my.weezevent.com/2025-06-pitch-party[Inscription,role=button]

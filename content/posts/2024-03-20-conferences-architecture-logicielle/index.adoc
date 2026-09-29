@@ -1,0 +1,42 @@
+---
+title: "2024-06- Conférences : Architecture Logicielle"
+date: "2024-03-20T16:25:40"
+lastmod: "2024-06-26T09:36:36"
+slug: "2024-06-conferences-architecture-logicielle"
+categories: ["evenements"]
+auteur: "Allan Cruchaudet"
+summary: "Conférences : Architecture logicielle Le Developers Group Dijon vous invite à son second événement de l’année ! Au programme 3 conférences de 15 minutes, sur une thématique précise : l’architecture logicielle. Nous vous…"
+image: "vignette-conferences-architecture-logicielle.webp"
+---
+
+https://my.weezevent.com/2024-03-speedteching
+
+image::bandeau-dev-groupe-conference.webp[]
+
+== Conférences : Architecture logicielle
+
+Le Developers Group Dijon vous invite à *son second événement de l’année* ! Au programme *3 conférences de 15 minutes*, sur une thématique précise : *l’architecture logicielle*.
+
+Nous vous donnons donc rdv le *mardi 18 Juin 2024 à 16h30* dans les nouveaux *locaux de CPage* situés 21 ter Av. Françoise Giroud, à Dijon
+
+== Au programme :
+
+=== 💡Q&R : Quel est le rôle de l’architecte ?
+
+Commençons par un tour de table afin de mettre des mots sur ce rôle clé aux facettes multiples.
+
+=== 🧱 Clean Archi Front / Le Frontend est un Backend par Yassine El Alouani.
+
+Découvrez la clean architecture côté frontend dans le cadre d’une application Angular : store, eventbus, communication backend, présentation UI, et plus encore…
+
+=== 🪄De l’idée au prototype : la magie du NoCode / LowCode par Adrien Gras.
+
+Découvrez comment le NoCode/LowCode peut transformer votre façon de travailler ! Ces outils révolutionnaires vous permettent de passer rapidement des idées aux prototypes, accélérant votre workflow et libérant du temps pour l’innovation.
+
+* *Date* : 18 Juin 2024
+* *Horaires* : De 16h30 à 18h30
+* *Lieu* : CPAGE
+
+link:https://www.openstreetmap.org/search?query=21+ter+Av.+Françoise+Giroud,+21000+Dijon[Voir sur la carte,role=map]
+
+link:https://my.weezevent.com/2024-06-conferences[Inscription,role=button]

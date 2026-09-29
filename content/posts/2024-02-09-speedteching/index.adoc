@@ -1,0 +1,29 @@
+---
+title: "2024-03 – SpeedTeching"
+date: "2024-02-09T07:13:59"
+lastmod: "2024-03-20T16:03:42"
+slug: "2024-03-speedteching"
+categories: ["evenements"]
+auteur: "Xavier Calland"
+summary: "SPEED TECHING Le Developers Group Dijon vous invite à son premier événement de l’année : un Speed Teching ! qui aura lieu mardi 19 mars 2024 à 16h30 dans les locaux du Diiage / CUCDB – Centre Universitaire Catholique De…"
+image: "vignette-devgroup.webp"
+---
+
+https://my.weezevent.com/2024-03-speedteching
+
+image::2024-03-SpeedTeching.webp[]
+
+== SPEED TECHING
+
+Le Developers Group Dijon vous invite à *son premier événement de l’année* : un *Speed Teching* ! qui aura lieu *mardi 19 mars 2024 à 16h30 dans les locaux du Diiage* */ CUCDB* – Centre Universitaire Catholique De Bourgogne situés 69 Av. Aristide Briand à Dijon 📍
+
+💡 Le principe du Speed Teching ? En petits groupes, venez *échanger autour de sujets tech et bonnes pratiques de votre quotidien*. À mi-chemin entre un barcamp et des tables rondes, on discute de sujets techniques, on partage nos retours d’expériences et nos points de vue 💬
+
+* *Date* : mardi 19 mars
+* *Horaires* : 16h30 – 18h30
+* *Lieu* : Diiage / CUCDB +
+69 Avenue Aristide Briand à Dijon
+
+link:https://www.openstreetmap.org/search?query=Diiage+/+CUCDB+69+Avenue+Aristide+Briand,+Dijon[Voir sur la carte,role=map]
+
+link:https://my.weezevent.com/2024-03-speedteching[Inscription,role=button]

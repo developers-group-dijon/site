@@ -1,0 +1,35 @@
+---
+title: "💡 Prêts pour une session d’échanges tech ?"
+date: "2026-03-26T13:43:57"
+lastmod: "2026-03-26T13:51:49"
+slug: "prets-pour-une-session-dechanges-tech"
+categories: ["evenements"]
+auteur: "Yoann Rouquié"
+summary: "📣 Le Developers Group Dijon revient avec un format dynamique : notre prochain événement Speed Teching ! 🤝 Le concept ? Plusieurs sessions courtes et percutantes pour découvrir de nouveaux outils, méthodologies ou…"
+image: "speedteching-dgd-1.webp"
+aliases: ["/💡-prets-pour-une-session-dechanges-tech/"]
+evenement:
+  date: "2026-06-25T17:00:00+02:00"
+  fin: "2026-06-25T20:00:00+02:00"
+  horaire: "17h00 – 20h00"
+  lieu: "Siège social APRR, Saint-Apollinaire"
+  inscription: "https://my.weezevent.com/speed-teching"
+  prix: "Gratuit"
+outputs: ["html", "calendar"]
+---
+
+📣 Le *Developers Group Dijon* revient avec un format dynamique : notre prochain événement *Speed Teching* !
+
+🤝 Le concept ? Plusieurs sessions courtes et percutantes pour découvrir de nouveaux outils, méthodologies ou retours d’expérience, le tout dans une ambiance ultra-conviviale. C’est l’occasion idéale pour élargir vos horizons techniques sans y passer la journée.
+
+🏢 Pour cette édition spéciale, nous avons le plaisir d’être accueillis par *APRR* dans leurs locaux de Saint-Apollinaire. Un grand merci à eux pour leur soutien à la communauté tech locale !
+
+🍕 Et parce qu’on ne change pas une équipe qui gagne, nous clôturerons ces échanges autour d’un *buffet dînatoire*. L’occasion parfaite pour approfondir les sujets abordés et refaire le monde (du code) avec vos pairs.
+
+🔍 Que vous soyez développeur, Ops, chef de projet informatique ou simple curieux de l’innovation, ne manquez pas ce rendez-vous incontournable de l’écosystème dijonnais.
+
+📅 *Jeudi 25 juin 2026 – de 17h00 à 20h00* 📍 *Siège social APRR*, Saint-Apollinaire
+
+🎟️ *Inscription gratuite mais obligatoire* (places limitées !)
+
+https://my.weezevent.com/speed-teching

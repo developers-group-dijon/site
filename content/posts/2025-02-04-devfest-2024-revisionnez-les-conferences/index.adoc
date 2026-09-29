@@ -1,0 +1,18 @@
+---
+title: "DevFest 2024 : revisionnez les conférences"
+date: "2025-02-04T08:05:00"
+lastmod: "2025-02-04T13:16:27"
+slug: "devfest-2024-revisionnez-les-conferences"
+categories: ["news"]
+auteur: "Allan Cruchaudet"
+summary: "Le vendredi 6 Décembre se déroulait la troisième édition du DevFest Dijonnais ! Ce grand événement, mené par le Developers Group Dijon a rencontré un franc succès : 435 professionnels de l’informatique ont pu assister…"
+image: "vignette-replay-conf-devfest.webp"
+---
+
+Le *vendredi 6 Décembre* se déroulait la troisième édition du DevFest Dijonnais !
+
+Ce grand événement, mené par le Developers Group Dijon a rencontré un franc succès : *435 professionnels de l’informatique* ont pu assister toute la journée à *25 conférences et short tracks*, se promener sur notre village entreprises, profiter de notre mini-fête foraine et surtout échanger sur des sujets tech !
+
+== Revisionnez toutes les conférences du DevFest2024
+
+link:https://www.youtube.com/playlist?list=PLBEWom8MlRwaeHUd-W4XwGD-TI3u2v7pG[Regarder la playlist sur YouTube,role=video]

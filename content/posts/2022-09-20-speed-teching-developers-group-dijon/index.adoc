@@ -1,0 +1,14 @@
+---
+title: "Speed-teching / Developers Group Dijon"
+date: "2022-09-20T10:00:00"
+lastmod: "2023-06-15T23:26:44"
+slug: "speed-teching-developers-group-dijon"
+categories: ["news"]
+auteur: "Jean-Philippe BENADJER"
+summary: "Retour en vidéo sur l’évènement."
+image: "speedteching-scaled-e1688048542866.webp"
+---
+
+Retour en vidéo sur l’évènement. +
+
+link:https://www.youtube.com/watch?v=N6WxqKdXAUE[Regarder la vidéo sur YouTube,role=video]

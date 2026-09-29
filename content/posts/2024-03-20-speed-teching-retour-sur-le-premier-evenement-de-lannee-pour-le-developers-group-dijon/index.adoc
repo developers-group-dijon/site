@@ -1,0 +1,24 @@
+---
+title: "Speed Teching : retour sur le premier événement de l’année pour le Developers Group Dijon !"
+date: "2024-03-20T16:11:04"
+lastmod: "2024-03-20T16:11:04"
+slug: "speed-teching-retour-sur-le-premier-evenement-de-lannee-pour-le-developers-group-dijon"
+categories: ["news"]
+auteur: "Allan Cruchaudet"
+summary: "Mardi 21 Mars, c’était le tout premier événement de l’année 2024 pour le Developer’s Group. C’était un réel plaisir de vous retrouver pour échanger avec vous sur des sujets techs lors de notre Speed-Teching ! Au…"
+image: "1710868119813.webp"
+---
+
+*Mardi 21 Mars*, c’était le tout *premier événement de l’année 2024* pour le Developer’s Group. C’était un réel plaisir de vous retrouver pour échanger avec vous sur des sujets techs lors de notre *Speed-Teching* ! Au programme, trois rounds de discussion sur des *sujets techs*. Une fois les petits groupes constitués, place aux échanges :  IA, Docker, NoSQL, sécurité, authentification, DevOps, CSS et bien d’autres … Chacun a eu l’opportunité de *partager son expertise et son expérience*, de quoi enrichir les débats.
+
+image::1710868123355.webp[]
+
+image::1710868119746.webp[]
+
+image::1710868119813.webp[]
+
+image::IMG_20240320_160723.webp[]
+
+C’était un réel plaisir de vous retrouver et d’échanger avec vous lors de ce Speed-Teching. Un grand merci au Diiage pour son accueil !
+
+Et pour la suite ? *On vous retrouve en Juin !! 😉*

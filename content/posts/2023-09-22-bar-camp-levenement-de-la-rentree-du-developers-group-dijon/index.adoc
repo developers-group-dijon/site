@@ -1,0 +1,22 @@
+---
+title: "Bar Camp, l’événement de la rentrée du Developers Group Dijon"
+date: "2023-09-22T15:36:42"
+lastmod: "2023-09-22T15:36:42"
+slug: "bar-camp-levenement-de-la-rentree-du-developers-group-dijon"
+categories: ["news"]
+auteur: "Jean-Philippe BENADJER"
+summary: "Le jeudi 21 Septembre, le Developers Group Dijon a organisé son premier événement de la rentrée ! Pour une reprise en douceur, nous avons proposé à nos passionnés de tech un BarCamp afin d’échanger sur la thématique de…"
+image: "barcamp.webp"
+---
+
+Le jeudi 21 Septembre, le Developers Group Dijon a organisé son premier événement de la rentrée ! Pour une reprise en douceur, nous avons proposé à nos passionnés de tech un BarCamp afin d’échanger sur la thématique de l’*Open-Source*.
+
+== Une vraie “non-conférence” : Pas de spectateur, tous participants !
+
+Le principe est simple, chaque participant note sur un post-it ce que lui évoque le thème du jour ! Place à la mise en commun, 3 thèmes majeurs ont été identifiés : L’aspect communautaire, la notion de confiance, et enfin le modèle économique ! Pour creuser chacun de ces sujets, nous avons formé trois groupes dédiés, chacun se plongeant dans une thématique spécifique. La suite ? Une session de restitution pour synthétiser leurs échanges. Et quoi de mieux pour clôturer en beauté ce BarCamp qu’un peu de pop-corn ? Un grand merci à AKYOS Communication pour son accueil !!
+
+== Et maintenant ? Place au Devfest !
+
+On vous l’avait annoncé il y a maintenant quelques mois, nous vous donnons rendez-vous le vendredi 8 décembre 2023 sur le Campus Eseo- ESTP (11 rue de Sully) à Dijon pour la deuxième édition de notre DevFest ! La billetterie est maintenant ouverte et avec elle son tarif canon Early Bird !
+
+link:https://my.weezevent.com/devfest-dijon-2023[N’hésitez pas à prendre vos billets dès maintenant !,role=button]

@@ -1,0 +1,28 @@
+---
+title: "Premier DevFest Dijon"
+date: "2022-12-02T10:00:00"
+lastmod: "2023-11-02T16:47:19"
+slug: "premier-devfest-dijon"
+categories: ["news"]
+auteur: "Jean-Philippe BENADJER"
+summary: "Le vendredi 2 Décembre 2022 se déroulait la première édition du DevFest ! Ce premier gros événement mené par le Developers Group Dijon a rencontré un franc succès puisque 150 professionnels de l’informatique ont pu…"
+image: "devfest-e1688048444454.webp"
+---
+
+Le vendredi 2 Décembre 2022 se déroulait la première édition du DevFest ! Ce premier gros événement mené par le Developers Group Dijon a rencontré un franc succès puisque 150 professionnels de l’informatique ont pu assister toute la journée à des conférences animées par des speakers de la France entière.
+
+== Un bilan très positif !
+
+Ce premier Devfest Dijon a permis aux 150 développeur-euses et chefs de projets informatiques d’écouter les 15 speakers prévus pendant les 7h de conférences que comptait  cette journée.
+
+____
+_Nous avons dû fermer la billetterie une semaine avant la date de l’événement car nous nous étions fixé un objectif de 150 places. Nous avons reçu des retours très positifs toute la journée, notamment des speakers qui participent régulièrement à d‘autres DevFest partout en France. Nous sommes très fiers de proposer cet événement._
+
+Xavier Calland, membre du bureau Developers Group Dijon.
+____
+
+link:https://www.youtube.com/watch?v=vaF-fOSs1fQ[Regarder la vidéo sur YouTube,role=video]
+
+== A propos du DevFest
+
+Le DevFest, affilié au Google Developer Groups et déjà organisé dans des métropoles comme Nantes, Lille ou Strasbourg, est un événement majeur de la communauté Tech, à destination des développeurs débutants et expérimentés, et regroupant des conférences et ateliers afin de favoriser les partages d’expérience.

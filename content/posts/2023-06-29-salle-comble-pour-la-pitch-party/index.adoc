@@ -1,0 +1,23 @@
+---
+title: "Salle comble pour la Pitch Party !"
+date: "2023-06-29T16:13:24"
+lastmod: "2023-06-29T16:13:26"
+slug: "salle-comble-pour-la-pitch-party"
+categories: ["news"]
+auteur: "Jean-Philippe BENADJER"
+summary: "Salle comble pour la Pitch Party organisée mardi 27 juin par le Developers Group Dijon dans les locaux d’Alteca. A cette occasion 13 pitcheur·euse·s ont relevé avec bravoure le défi de présenter en 5 minutes le sujet…"
+image: "photo-pitch-e1688048336831.webp"
+---
+
+Salle comble pour la Pitch Party organisée mardi 27 juin par le Developers Group Dijon dans les locaux d’Alteca.
+
+A cette occasion 13 pitcheur·euse·s ont relevé avec bravoure le défi de présenter en 5 minutes le sujet tech de leur choix !
+
+Vous étiez vous aussi nombreux et nombreuses à répondre à l’appel pour assister aux performances de nos pitcheur·euse·s. Et il y en avait pour tous les goûts : cryptographie, framework, WebFlux et bien d’autres sujets ont été pitchés face à une bonne trentaine de passionné.e.s de la tech ! +
+Bravo à l’ensemble de nos orateurs pour leur performance !
+
+== En route pour le troisième événement de l’année !
+
+Le link:/[Developers Group Dijon] a le plaisir de vous convier à son “BarCamp” jeudi 21 septembre 2023 à 16h dans les locaux d’https://akyos.com/[Akyos] 5 Rue de Mayence, 21000 Dijon à Dijon !
+
+link:/premier-bar-camp-le-21-septembre-2023/[Plus d’informations,role=button]

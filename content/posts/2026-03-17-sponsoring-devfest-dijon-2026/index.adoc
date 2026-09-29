@@ -1,0 +1,22 @@
+---
+title: "Sponsoring DevFest Dijon 2026"
+date: "2026-03-17T12:50:14"
+lastmod: "2026-04-27T11:38:43"
+slug: "sponsoring-devfest-dijon-2026"
+categories: ["news"]
+auteur: "Caroline Chanlon"
+summary: "📣 La 5ème édition du DevFest Dijon se tiendra vendredi 4 décembre 2026 à l’Université Bourgogne Europe / Campus Mirande ! ❤️ Soutenez le DevFest Dijon 2026 en sponsorisant l’événement ! ↪️ Détail des offres de…"
+image: "vignette-sponsoring-devfest-2026.webp"
+---
+
+image::vignette-sponsoring-devfest-2026.webp[]
+
+📣 La 5ème édition du DevFest Dijon se tiendra vendredi 4 décembre 2026 à l’Université Bourgogne Europe / Campus Mirande !
+
+== ❤️ *Soutenez le DevFest Dijon 2026 en sponsorisant l’événement !*
+
+↪️ link:Dossier-sponsoring-DevFest-2026_.pdf[Détail des offres de sponsoring]
+
+↪️ https://docs.google.com/forms/d/e/1FAIpQLSddDd_9gx9l3OT-xBqFjAvErFmxJC_poR90sPgFmcxTi9B4KQ/viewform[Formulaire de demande de sponsoring]
+
+_« Nous arrivons à la 5ème édition du DevFest Dijon et l’événement n’a fait que prendre en ampleur d’année en année. De 150 inscrits à la première édition, nous avons passé la barre des 500 participants en 2025 !  Pour cette édition, l’objectif est de travailler encore sur les programmes, les animations et les formats pour proposer une expérience inédite aux participants. »_ *La team (très motivée !) Developers Group Dijon*

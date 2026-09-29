@@ -1,0 +1,29 @@
+---
+title: "Retour sur le DevFest 2024"
+date: "2025-02-04T08:00:00"
+lastmod: "2025-02-04T10:52:49"
+slug: "retour-sur-le-devfest-2024"
+categories: ["news"]
+auteur: "Allan Cruchaudet"
+summary: "Le vendredi 6 décembre, la troisième édition du DevFest Dijon a réuni la communauté tech pour une journée entièrement consacrée à l’informatique. Résultat ? Un véritable succès marqué par une belle ambiance conviviale…"
+image: "Devfest-24.webp"
+---
+
+Le vendredi 6 décembre, la troisième édition du DevFest Dijon a réuni la communauté tech pour une journée entièrement consacrée à l’informatique. Résultat ? Un véritable succès marqué par une belle ambiance conviviale, des conférences captivantes et des moments d’échanges uniques
+
+== *Cette troisième édition en chiffres :*
+
+Le DevFest 2024 cest :
+
+* 435 participant-es !
+* 28 speakers passioné·e·s, venus partager leurs expertises.
+* 25 conférences et short tracks !
+* 13 entreprises présentes sur le Village Entreprises
+* 6 startup
+* 20 sponsors et soutiens
+* Un staff de 13 personnes
+* 2 énormes sacs de pop-corn dévorés ! 🍿
+
+== *Replongez dans les talks du DevFest 2024*
+
+Grande nouveauté cette année : les conférences ont été enregistrées ! Nous savons qu’il n’était pas toujours simple de choisir entre les différentes sessions. C’est pourquoi, cette fois-ci, nous mettons à votre disposition l’intégralité des conférences sur https://www.youtube.com/@developersgroupdijon3650[notre chaîne YouTube] !

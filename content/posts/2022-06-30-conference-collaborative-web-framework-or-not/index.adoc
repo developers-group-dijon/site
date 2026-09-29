@@ -1,0 +1,14 @@
+---
+title: "Conférence collaborative Web Framework : Or Not !"
+date: "2022-06-30T10:00:00"
+lastmod: "2023-06-15T23:26:34"
+slug: "conference-collaborative-web-framework-or-not"
+categories: ["news"]
+auteur: "Jean-Philippe BENADJER"
+summary: "Une première action s’est déroulée le jeudi 30 Juin 2022, il s’agit d’une conférence collaborative sur le thème « Web framework : or not ! ». Les équipes d’Atol CD, Gammeo, Owlnext et CPAGE ont partagé leurs retours…"
+image: "confwebframework-e1688048589402.webp"
+---
+
+Une première action s’est déroulée le jeudi 30 Juin 2022, il s’agit d’une conférence collaborative sur le thème « Web framework : or not ! ». Les équipes d’Atol CD, Gammeo, Owlnext et CPAGE ont partagé leurs retours d’expérience sur l’utilisation des frameworks.
+
+link:https://www.youtube.com/watch?v=DlOKAbqzxHo[Regarder la vidéo sur YouTube,role=video]

@@ -1,0 +1,26 @@
+---
+title: "Premier Bar Camp le 21 septembre 2023"
+date: "2023-06-28T11:15:53"
+lastmod: "2023-06-28T11:15:55"
+slug: "premier-bar-camp-le-21-septembre-2023"
+categories: ["news"]
+auteur: "Jean-Philippe BENADJER"
+summary: "En route pour notre 3ème événement de l’année ! Le Developers Group Dijon a le plaisir de vous convier à son “BarCamp” jeudi 21 septembre 2023 à 16h dans les locaux d’Akyos 5 Rue de Mayence, 21000 Dijon à Dijon. Un…"
+image: "photo-barcamp-monochrome.webp"
+---
+
+En route pour notre 3ème événement de l’année ! Le https://www.linkedin.com/company/developers-group-dijon/[Developers Group Dijon] a le plaisir de vous convier à son “BarCamp” jeudi 21 septembre 2023 à 16h dans les locaux d’https://akyos.com/[Akyos] 5 Rue de Mayence, 21000 Dijon à Dijon.
+
+== Un BarQuoi ???
+
+*Un B-A-R-C-A-M-P !* Une formule 100% participative :
+
+* Une thématique pour phosphorer : “Open Source & Pérennité”
+* des ateliers collaboratifs pour partager vos points de vue,
+* un moment de convivialité (on a dit “bar”camp !) pour clôturer !
+
+Bref une vraie non-conférence qui répond à une règle : *“Pas de spectateur, tous participants !”*
+
+*Et tout le monde peut participer* : que vous soyez un.e pro, un.e débutant.e, un pilier de Barcamp, un ou une curieuse = vous avez tous et toutes quelque chose à apporter !
+
+link:https://my.weezevent.com/2023-09-barcamp[vous venez,role=button]

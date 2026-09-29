@@ -1,0 +1,16 @@
+---
+title: "Retour sur le Starter Lab « Rust »"
+date: "2023-03-23T12:00:00"
+lastmod: "2023-06-14T13:02:08"
+slug: "retour-sur-le-starter-lab-rust"
+categories: ["news"]
+auteur: "Jean-Philippe BENADJER"
+summary: "Le jeudi 23 mars s’est déroulé dans les locaux de BPCE Solutions Informatiques le premier événement de l’année du Developers Group Dijon. Un Starter Lab consacré au langage de programmation “Rust”, animé par Adrien Gras…"
+image: "starter-lab-e1688048387100.webp"
+---
+
+Le jeudi 23 mars s’est déroulé dans les locaux de BPCE Solutions Informatiques le premier événement de l’année du Developers Group Dijon. Un Starter Lab consacré au langage de programmation “Rust”, animé par Adrien Gras (Owlnext) et Mathias Da Costa (Kwikwink). Le défi pour la trentaine de participant.e.s ? Créer un programme permettant d’implémenter le célèbre jeu du “Juste Prix” !
+
+== Une première initiation à Rust
+
+Pour ce nouvel événement du Developers Group Dijon, Rust était à l’honneur ! Une trentaine de participant.e.s ont participé à l’atelier animé par Adrien Gras, membre du Developers Group, pour découvrir ce langage utilisé pour la construction de logiciels. Après une rapide présentation de Rust, place à la pratique avec la création d’un programme permettant d’ implémenter le célèbre jeu du “Juste Prix” tout en appréhendant les concepts et syntaxes de base du langage.
