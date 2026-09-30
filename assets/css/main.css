@@ -187,7 +187,9 @@ h1, h2, h3, h4 { font-family: var(--px); font-weight: 500; line-height: 1.15; ma
 .infos dt { font-family: var(--px); font-size: 13px; text-transform: uppercase; color: var(--gris); }
 .infos dd { margin: 2px 0 0; font-size: 16px; font-weight: 600; line-height: 1.5; }
 .infos .btn { text-align: center; }
-.infos__ics { font-size: 14px; text-align: center; }
+.infos dd a { color: inherit; }
+.btn--icone { display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
+.btn--icone svg { flex: none; }
 .infos__passe { font-family: var(--px); font-size: 14px; background: var(--gris-clair); padding: 6px 10px; text-align: center; }
 
 /* ——— Contenu Asciidoc ——— */
@@ -218,6 +220,7 @@ h1, h2, h3, h4 { font-family: var(--px); font-weight: 500; line-height: 1.15; ma
 .prose .admonitionblock td { border: 0; padding: 16px 18px; }
 .prose .admonitionblock td.icon { width: 1%; white-space: nowrap; font-family: var(--px); text-transform: uppercase; font-size: 15px; color: var(--rose-fonce); }
 .prose .admonitionblock td.icon .title { font-weight: 400; }
+.prose .admonitionblock td.icon img { display: block; width: 40px; height: 40px; max-width: none; image-rendering: pixelated; }
 .prose .admonitionblock.tip table { border-color: var(--orange); background: #fffbe6; box-shadow: var(--ombre) var(--orange); }
 .prose .admonitionblock.tip td.icon { color: #92400e; }
 .prose .admonitionblock.warning table, .prose .admonitionblock.caution table, .prose .admonitionblock.important table { border-color: var(--noir); background: var(--fond-alt); box-shadow: var(--ombre) var(--noir); }

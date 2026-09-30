@@ -1,0 +1,41 @@
+---
+title: "Tremplin DevFest 2026"
+date: 2026-09-29T10:00:00+02:00
+slug: "tremplin-devfest-2026"
+categories: ["evenements"]
+auteur: "Guillaume Poittevin"
+image: "tremplin-devfest-2026.webp"
+summary: "Mercredi 4 novembre chez BPCE-SI : cinq primo-speakers montent sur scène après un coaching de CraftsRecords, et le public choisit les deux short-tracks du DevFest Dijon 2026. 50 places, inscription obligatoire."
+evenement:
+  date: "2026-11-04T16:30:00+01:00"
+  fin: "2026-11-04T19:30:00+01:00"
+  horaire: "16h30 – 19h30 (talks à partir de 16h45)"
+  lieu: "BPCE-SI, 13 bis avenue Albert 1er, Dijon"
+  carte: "https://www.openstreetmap.org/search?query=13+bis+Av.+Albert+1er,+21000+Dijon"
+  places: "50 maximum"
+  inscription: "https://my.weezevent.com/tremplin-devfest-2026"
+  prix: "Gratuit"
+outputs: ["html", "calendar"]
+---
+
+Le Tremplin revient ! *Mercredi 4 novembre*, cinq primo-speakers donnent leur tout premier talk devant un public, en avant-première du https://devfest.developers-group-dijon.fr/[DevFest Dijon 2026].
+
+Pendant plusieurs semaines, ces speakers ont bénéficié du coaching de https://craftsrecords.org/[*CraftsRecords*] pour construire leur sujet et préparer leur prise de parole. Venez les encourager : c'est leur première scène, et votre présence compte.
+
+L'événement est accueilli par https://www.bpce-si.fr/[*BPCE-SI*], que nous remercions pour la salle et pour la collation.
+
+== Au programme
+
+* *16h30* : accueil
+* *16h45* : début des conférences
+* *5 talks de 25 minutes*, par cinq primo-speakers
+* *Vote du public* : il désigne les *deux short-tracks* qui seront présentés au DevFest Dijon 2026, le vendredi 4 décembre
+* *Temps convivial* autour d'une collation offerte par BPCE-SI, jusqu'à 19h30
+
+Le bâtiment ferme à 19h30 : tout le monde devra avoir quitté les lieux à cette heure-là.
+
+Les sujets et les speakers seront dévoilés prochainement.
+
+== Inscription
+
+IMPORTANT: *Inscription obligatoire, 50 places.* L'entrée dans les locaux de BPCE-SI se fait avec un badge nominatif. Lors de votre inscription, indiquez vos nom, prénom et, si possible, votre entreprise ou votre école.
