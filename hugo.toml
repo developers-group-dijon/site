@@ -19,10 +19,17 @@ disableKinds = ["taxonomy"]
   pagerSize = 12
 
 [outputs]
-  home = ["html", "rss"]
+  home = ["html", "rss", "agenda"]
   page = ["html"]
   section = ["html"]
   term = ["html", "rss"]
+
+# Agenda de tous les événements : /agenda.ics
+[outputFormats.agenda]
+  mediaType = "text/calendar"
+  baseName = "agenda"
+  isPlainText = true
+  notAlternative = true
 
 [services.rss]
   limit = 20
