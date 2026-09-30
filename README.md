@@ -128,3 +128,4 @@ Tous les articles et pages de l'ancien site ont été convertis en Asciidoc. Leu
 - **Adresses conservées** : `/mon-article/`, `/category/news/`, `/category/evenements/` et `/code-de-conduite/` restent identiques.
 - **Article dont l'adresse contenait un emoji** : son ancienne adresse redirige vers la nouvelle.
 - **Ancien flux RSS WordPress** : `/feed/` redirige vers `/index.xml`, via le `.htaccess`, uniquement si l'hébergement est sous Apache.
+- **Adresse canonique** : en production, `http://` et le domaine sans `www` redirigent (301) vers `https://www.developers-group-dijon.fr/`, via `static/.htaccess`. Le site de test n'est pas concerné.
