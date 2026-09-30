@@ -34,7 +34,7 @@ Dans l'en-tête du fichier (front matter) :
 | `evenement` | Bloc facultatif : `date`, `fin`, `horaire`, `lieu`, `inscription`, `prix`. Il affiche l'encadré « Infos pratiques » et classe l'événement dans « À venir » tant que sa date n'est pas passée. |
 | `outputs: ["html", "calendar"]` | Génère en plus un fichier `.ics` « Ajouter à mon agenda » (à garder avec `evenement`). |
 
-Tout article dont le bloc `evenement` a une `date` apparaît aussi dans l'agenda global `/agenda.ics` (début, fin, lieu), proposé dans l'en-tête de la page Événements et dans le pied de page.
+Tout article dont le bloc `evenement` a une `date` apparaît aussi dans l'agenda global `/agenda.ics` (début, fin, lieu), proposé en abonnement (lien `webcal://`) dans l'en-tête de la page Événements et dans le pied de page.
 
 ### Mémo Asciidoc
 
