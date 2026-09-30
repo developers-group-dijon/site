@@ -4,6 +4,8 @@ Site statique de [www.developers-group-dijon.fr](https://www.developers-group-di
 
 Le site ne contient aucune ligne de JavaScript, aucun cookie et aucun traceur. La charte graphique reprend celle du DevFest Dijon 2026.
 
+Les règles de développement (zéro JavaScript, compatibilité mobile) et de rédaction (liens vers les partenaires, écriture inclusive) sont décrites dans [`.claude/rules/`](.claude/rules/). Elles valent pour toutes les contributions, humaines ou générées par Claude. `scripts/verifier-site.sh public` contrôle le site construit ; la CI lance ce contrôle à chaque build.
+
 ## Publier du contenu
 
 1. Créez une branche.
