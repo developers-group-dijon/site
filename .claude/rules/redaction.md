@@ -2,6 +2,8 @@
 
 Ces règles s'appliquent à tout texte rédigé ou modifié pour le site : articles (`content/posts/`), pages, résumés (`summary`), textes de `hugo.toml` et libellés des gabarits.
 
+**Les articles déjà publiés ne sont pas corrigés a posteriori.** Ne pas modifier un article existant de `content/posts/` pour l'aligner sur ces règles, même en passant, sauf demande explicite portant sur cet article. Les règles valent pour les nouveaux articles et pour les passages qu'on demande de réécrire.
+
 ## 1. Partenaires cités : au moins un lien
 
 Lorsqu'un texte cite un partenaire, au moins une de ses mentions (de préférence la première) est un lien vers son site.
@@ -11,6 +13,7 @@ Lorsqu'un texte cite un partenaire, au moins une de ses mentions (de préférenc
 - Un partenaire sans `url` dans le fichier (par exemple Google Developer Groups) : demander l'adresse à utiliser, ou proposer de compléter `data/partenaires.yaml`.
 - Syntaxe Asciidoc : `https://atolcd.com[Atol CD]`.
 - Il suffit d'un lien par partenaire et par article ; les mentions suivantes peuvent rester en texte simple.
+- Exception : la liste des membres actifs de la page « L'association » (`content/association/index.adoc`) ne met pas de lien sur les entreprises. Les logos des partenaires, avec leur lien, sont affichés juste en dessous sur la même page.
 
 ## 2. Écriture inclusive
 
