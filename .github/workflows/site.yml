@@ -40,6 +40,11 @@ jobs:
         env:
           TZ: Europe/Paris
 
+      - name: Check guardrails (no JavaScript, mobile)
+        run: |
+          scripts/verifier-site.sh public
+          scripts/verifier-site.sh public-test
+
       - name: Upload public dir
         uses: actions/upload-artifact@v7
         with:
