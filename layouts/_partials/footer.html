@@ -14,7 +14,7 @@
       {{- end }}
       <li><a href="/index.xml">RSS</a></li>
       {{- with site.Home.OutputFormats.Get "agenda" }}
-      <li><a href="{{ .RelPermalink }}">Agenda (.ics)</a></li>
+      <li><a href="{{ .Permalink | safeURL }}">Agenda</a></li>
       {{- end }}
     </ul>
     <div class="site-footer__tech">

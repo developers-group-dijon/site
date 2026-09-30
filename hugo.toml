@@ -24,10 +24,11 @@ disableKinds = ["taxonomy"]
   section = ["html"]
   term = ["html", "rss"]
 
-# Agenda de tous les événements : /agenda.ics
+# Agenda de tous les événements : /agenda.ics, lié en webcal:// (abonnement)
 [outputFormats.agenda]
   mediaType = "text/calendar"
   baseName = "agenda"
+  protocol = "webcal://"
   isPlainText = true
   notAlternative = true
 
