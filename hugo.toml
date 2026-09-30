@@ -59,7 +59,7 @@ disableKinds = ["taxonomy"]
 [params]
   description = "Association de bénévoles qui fédère et anime la communauté des développeuses et développeurs de la région dijonnaise."
   contact = "developers.group.dijon@gmail.com"
-  repo = "" # ex. "https://github.com/ORGANISATION/site" : active le lien « Modifier cette page »
+  repo = "https://github.com/developers-group-dijon/site"
   mainSections = ["posts"]
 
   [params.social]
