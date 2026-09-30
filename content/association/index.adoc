@@ -31,7 +31,7 @@ image::equipe.webp[L'équipe du Developers Group Dijon]
 [#rejoignez-nous]
 == Rejoignez-nous
 
-L'association Developers Group Dijon est ouverte à tout type de structure : entreprises de la tech, startups, écoles et université, laboratoires, organismes publics… et n'engage pas de frais d'adhésion.
+Le Developers Group Dijon est une association de personnes : chacune et chacun y adhère à titre individuel, sans frais d'adhésion. Ses membres viennent d'horizons variés (entreprises de la tech, startups, écoles et universités, laboratoires, organismes publics…) et peuvent y représenter leur structure.
 
 L'animation de l'association se fait sur la base du bénévolat.
 
