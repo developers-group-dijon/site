@@ -5,8 +5,16 @@ AddCharset UTF-8 .html .xml .ics
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  # Domaine sans www vers l'adresse canonique (www-test n'est pas concerné)
+  # Production : adresse canonique https://www.developers-group-dijon.fr/,
+  # en une seule redirection. www-test n'est pas concerné.
+  # Domaine sans www (http ou https) vers l'adresse canonique
   RewriteCond %{HTTP_HOST} ^developers-group-dijon\.fr$ [NC]
+  RewriteRule ^(.*)$ https://www.developers-group-dijon.fr/$1 [R=301,L]
+  # www en http vers https. X-Forwarded-Proto couvre un hébergeur qui termine
+  # le HTTPS en amont d'Apache (sinon la redirection bouclerait).
+  RewriteCond %{HTTP_HOST} ^www\.developers-group-dijon\.fr$ [NC]
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
   RewriteRule ^(.*)$ https://www.developers-group-dijon.fr/$1 [R=301,L]
   # Ancien flux RSS WordPress
   RewriteRule ^feed/?$ /index.xml [R=301,L]
