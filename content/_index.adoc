@@ -1,7 +1,7 @@
 ---
 title: "Developers Group Dijon"
 accroche: "Association · depuis juin 2022"
-titre_hero: "Fédérer et animer la communauté des développeur·euse·s de Dijon"
+titre_hero: "Fédérer et animer la communauté des développeuses et développeurs de Dijon"
 sous_titre: "Des événements réguliers pour échanger et partager nos expériences — et chaque année, le DevFest Dijon."
 ---
 
