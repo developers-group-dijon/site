@@ -7,7 +7,10 @@
     <h1>{{ .Title }}</h1>
     {{- with .Description }}<p>{{ . }}</p>{{ end }}
     {{- if .Params.agenda }}{{ with site.Home.OutputFormats.Get "agenda" }}
-    <p><a class="btn btn--secondaire" href="{{ .Permalink | safeURL }}">S'abonner à l'agenda</a></p>
+    <div class="actions">
+      <a class="btn btn--secondaire" href="{{ .Permalink | safeURL }}">S'inscrire à l'agenda</a>
+      <a class="btn btn--secondaire" href="{{ .RelPermalink }}" download>Télécharger l'agenda</a>
+    </div>
     {{- end }}{{ end }}
   </div>
 </section>
