@@ -20,7 +20,7 @@ outputs: ["html", "calendar"]
 
 Le Tremplin revient ! *Mercredi 4 novembre*, cinq primo-speakers donnent leur tout premier talk devant un public, en avant-première du https://devfest.developers-group-dijon.fr/[DevFest Dijon 2026].
 
-Pendant plusieurs semaines, ces speakers ont bénéficié du coaching de https://www.linkedin.com/company/craftsrecords/[*CraftsRecords*] pour construire leur sujet et préparer leur prise de parole. Venez les encourager : c'est leur première scène, et votre présence compte.
+Pendant plusieurs semaines, ces speakers ont bénéficié du coaching de https://craftsrecords.org/[*CraftsRecords*] pour construire leur sujet et préparer leur prise de parole. Venez les encourager : c'est leur première scène, et votre présence compte.
 
 L'événement est accueilli par https://www.bpce-si.fr/[*BPCE-SI*], que nous remercions pour la salle et pour la collation.
 
