@@ -16,16 +16,16 @@ image::equipe.webp[L'équipe du Developers Group Dijon]
 
 == Elles et ils font vivre l'asso
 
-* Adrien Gras, https://owlnext.fr/[Owlnext]
-* Fabrice Ubertosi, https://www.cpage.fr/[Cpage]
-* Jérémy Colombet, https://garganttua.com/[Garganttua]
-* Matthieu Lamalle, https://www.cadoles.com/[Cadoles]
-* Caroline Chanlon, https://osanah-communication.fr/[Osanah communication]
+* Adrien Gras, Owlnext
+* Fabrice Ubertosi, Cpage
+* Jérémy Colombet, Garganttua
+* Matthieu Lamalle, Cadoles
+* Caroline Chanlon, Osanah communication
 * Allan Cruchaudet, Dijon Bourgogne Invest
-* Xavier Calland, https://atolcd.com[Atol CD]
-* Mathilde Couenne, https://www.alteca.fr/[Alteca]
-* Yoann Rouquié, https://voyage.aprr.fr/[APRR]
-* Michel Girard, https://diiage.cucdb.fr/[DIIAGE]
+* Xavier Calland, Atol CD
+* Mathilde Couenne, Alteca
+* Yoann Rouquié, APRR
+* Michel Girard, DIIAGE
 * Guillaume Poittevin, Capgemini
 
 [#rejoignez-nous]
