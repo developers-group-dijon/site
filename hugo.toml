@@ -57,7 +57,7 @@ disableKinds = ["taxonomy"]
   minifyOutput = true
 
 [params]
-  description = "Association de bénévoles qui fédère et anime la communauté des développeur·euse·s de la région dijonnaise."
+  description = "Association de bénévoles qui fédère et anime la communauté des développeuses et développeurs de la région dijonnaise."
   contact = "developers.group.dijon@gmail.com"
   repo = "" # ex. "https://github.com/ORGANISATION/site" : active le lien « Modifier cette page »
   mainSections = ["posts"]
@@ -73,7 +73,7 @@ disableKinds = ["taxonomy"]
     date = "Ven. 4 déc. 2026"
     lieu = "UFR Sciences et Techniques"
     adresse = "Campus Mirande, Dijon"
-    texte = "Le plus grand festival dédié aux développeurs de Bourgogne-Franche-Comté : conférences, ateliers et rencontres toute la journée."
+    texte = "Le plus grand festival dédié aux développeuses et développeurs de Bourgogne-Franche-Comté : conférences, ateliers et rencontres toute la journée."
     url = "https://devfest.developers-group-dijon.fr/"
     edition = "5"
 
