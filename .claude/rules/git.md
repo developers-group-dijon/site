@@ -26,6 +26,7 @@ Un hook (`.claude/hooks/garde-git.sh`) et une règle de permission (`.claude/set
 - Si le travail dépend d'une branche pas encore mergée (par exemple une correction qui a besoin des fichiers d'une autre branche), partir de cette branche et le signaler : les deux branches devront être mergées dans l'ordre.
 - Nom en minuscules et tirets, préfixé par le type : `article/`, `evenement/`, `fix/`, `feat/`, `docs/`, `chore/`. Exemples : `article/devfest-2026-programme`, `fix/menu-mobile`.
 - Une branche par sujet. Ne pas mélanger un article et une modification de gabarit.
+- Une branche mergée dans `main` n'est plus réutilisée (GitHub peut recréer ses commits sous d'autres identifiants) : repartir de `origin/main` dans une nouvelle branche.
 - Commande à part : `git switch -c …` dans un appel, `git commit` dans un autre (le hook vérifie la branche courante avant l'exécution de la commande).
 - Le hook détecte `git push` en début de ligne, même dans un heredoc : écrire les messages de commit dans un fichier (`git commit -F fichier`) plutôt qu'en heredoc s'ils contiennent une telle ligne.
 
