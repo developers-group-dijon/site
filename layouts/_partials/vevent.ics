@@ -1,0 +1,15 @@
+{{- /* Un VEVENT iCalendar pour une page qui a un bloc « evenement ». */ -}}
+{{- $e := .Params.evenement -}}
+{{- $debut := time.AsTime $e.date -}}
+{{- $fin := cond (isset $e "fin") (time.AsTime $e.fin) ($debut.Add (time.ParseDuration "2h")) -}}
+{{- $fmt := "20060102T150405Z" -}}
+BEGIN:VEVENT
+UID:{{ md5 .RelPermalink }}@developers-group-dijon.fr
+DTSTAMP:{{ .Lastmod.UTC.Format $fmt }}
+DTSTART:{{ $debut.UTC.Format $fmt }}
+DTEND:{{ $fin.UTC.Format $fmt }}
+SUMMARY:{{ .Title | replaceRE "([,;])" "\\$1" }}
+{{ with $e.lieu }}LOCATION:{{ . | replaceRE "([,;])" "\\$1" }}
+{{ end }}URL:{{ .Permalink }}
+DESCRIPTION:{{ .Permalink }}
+END:VEVENT

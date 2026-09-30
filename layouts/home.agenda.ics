@@ -1,0 +1,9 @@
+{{- /* Flux de tous les événements (pages avec un bloc « evenement » daté) : /agenda.ics */ -}}
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Developers Group Dijon//Site//FR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:{{ site.Title }}
+{{ range where site.RegularPages "Params.evenement.date" "!=" nil }}{{ partial "vevent.ics" . | chomp }}
+{{ end }}END:VCALENDAR

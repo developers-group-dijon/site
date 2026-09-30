@@ -13,6 +13,9 @@
       <li><a href="{{ .linkedin }}">LinkedIn</a></li>
       {{- end }}
       <li><a href="/index.xml">RSS</a></li>
+      {{- with site.Home.OutputFormats.Get "agenda" }}
+      <li><a href="{{ .RelPermalink }}">Agenda (.ics)</a></li>
+      {{- end }}
     </ul>
     <div class="site-footer__tech">
       Propulsé par <a href="https://gohugo.io/">Hugo</a>
