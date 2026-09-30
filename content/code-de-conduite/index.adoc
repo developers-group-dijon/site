@@ -8,13 +8,13 @@ lastmod: "2023-06-20T16:10:25"
 
 === Règlement de la communauté Developers Group Dijon et règles contre le harcèlement
 
-Developers Group Dijon s’engage à offrir à tous les participant.e.s une expérience inclusive ne laissant aucune place au harcèlement, indépendamment de leur identité et expression de genre, orientation sexuelle, handicap, neurodiversité, apparence physique, corpulence, ethnicité, nationalité, race, âge, religion, ou de toute autre catégorie protégée. Nous ne tolérerons aucune forme de harcèlement à l’encontre des participants. Developers Group Dijon prend très au sérieux les cas de non-respect des règles et prendra les mesures appropriées.
+Developers Group Dijon s’engage à offrir à toutes les participantes et à tous les participants une expérience inclusive ne laissant aucune place au harcèlement, indépendamment de leur identité et expression de genre, orientation sexuelle, handicap, neurodiversité, apparence physique, corpulence, ethnicité, nationalité, race, âge, religion, ou de toute autre catégorie protégée. Nous ne tolérerons aucune forme de harcèlement envers les personnes présentes. Developers Group Dijon prend très au sérieux les cas de non-respect des règles et prendra les mesures appropriées.
 
-=== Tou.te.s les participant.e.s aux événements Developers Group Dijon doivent respecter les règles suivantes:
+=== Tou·te·s les participant·e·s aux événements Developers Group Dijon doivent respecter les règles suivantes:
 
-*Soyez excellent.e.s les un.e.s envers les autres.*
+*Soyez excellent·e·s les un·e·s envers les autres.*
 
-Traitez les autres avec respect. Participez en reconnaissant que tout le monde mérite d’être ici, et chacun d’entre nous a le droit de profiter de son expérience sans crainte de harcèlement, de discrimination ni de consension, qu’elles soit flagrantes ou par micro-agressions. Les plaisanteries ne doivent pas dénigrer autrui. Réfléchissez à ce que vous dites et à ce que vous ressentiriez si c’était dit à vous ou à votre sujet.
+Traitez les autres avec respect. Participez en reconnaissant que tout le monde mérite d’être ici, et chacune et chacun d’entre nous a le droit de profiter de son expérience sans crainte de harcèlement, de discrimination ni de consension, qu’elles soit flagrantes ou par micro-agressions. Les plaisanteries ne doivent pas dénigrer autrui. Réfléchissez à ce que vous dites et à ce que vous ressentiriez si c’était dit à vous ou à votre sujet.
 
 *Parlez si vous voyez ou entendez quelque chose.*
 
@@ -22,13 +22,13 @@ Le harcèlement ne saurait être toléré, et vous avez le droit de réagir poli
 
 *Entraînez-vous à vous dire « Oui » et « mutuellement ».*
 
-C’est une technique d’improvisation théâtrale qui vise à s’inspirer des idées des autres. Ensemble, nous profitons à tous.
+C’est une technique d’improvisation théâtrale qui vise à s’inspirer des idées des autres. Ensemble, nous en profitons toutes et tous.
 
 === Nous appliquons une politique de zéro tolérance pour tout type de harcèlement.
 
-Les participant.e.s invité.e.s à cesser tout harcèlement doivent se mettre immédiatement en conformité. Notre politique de tolérance zéro signifie que nous prenons en compte et examinons tout cas présumé de non-respect du règlement de la communauté concernant les événements et des règles contre le harcèlement, et que nous y répondons de manière appropriée. Nous vous encourageons à signaler tout comportement qui vous met mal à l’aise ou qui vous inquiète, en vous rapprochant d’un membre du Developers Group Dijon ou en envoyant un e-mail à l’adresse developers.group.dijon@gmail.com.
+Les personnes invitées à cesser tout harcèlement doivent se mettre immédiatement en conformité. Notre politique de tolérance zéro signifie que nous prenons en compte et examinons tout cas présumé de non-respect du règlement de la communauté concernant les événements et des règles contre le harcèlement, et que nous y répondons de manière appropriée. Nous vous encourageons à signaler tout comportement qui vous met mal à l’aise ou qui vous inquiète, en vous rapprochant d’un membre du Developers Group Dijon ou en envoyant un e-mail à l’adresse developers.group.dijon@gmail.com.
 
-Quiconque ayant un comportement inapproprié, harcelant ou mettant mal à l’aise ou s’il.elle ne respecte pas les présentes règles, peut être exclu.e à tout moment ou interdit.e d’admission (y compris à des événements Developers Group Dijon futurs) de tout événement organisé par Developers Group Dijon et à sa seule discrétion. Les personnes exclues d’un événement pour non-respect de cette règle ne recevront aucun remboursement.
+Toute personne ayant un comportement inapproprié, harcelant ou mettant mal à l’aise, ou ne respectant pas les présentes règles, peut être exclue à tout moment ou se voir refuser l’admission (y compris à des événements Developers Group Dijon futurs) de tout événement organisé par Developers Group Dijon et à sa seule discrétion. Les personnes exclues d’un événement pour non-respect de cette règle ne recevront aucun remboursement.
 
 Cela inclut (liste non exhaustive) :
 

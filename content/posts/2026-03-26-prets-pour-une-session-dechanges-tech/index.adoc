@@ -1,5 +1,5 @@
 ---
-title: "💡 Prêts pour une session d’échanges tech ?"
+title: "💡 Prêt·e·s pour une session d’échanges tech ?"
 date: "2026-03-26T13:43:57"
 lastmod: "2026-03-26T13:51:49"
 slug: "prets-pour-une-session-dechanges-tech"
@@ -22,11 +22,11 @@ outputs: ["html", "calendar"]
 
 🤝 Le concept ? Plusieurs sessions courtes et percutantes pour découvrir de nouveaux outils, méthodologies ou retours d’expérience, le tout dans une ambiance ultra-conviviale. C’est l’occasion idéale pour élargir vos horizons techniques sans y passer la journée.
 
-🏢 Pour cette édition spéciale, nous avons le plaisir d’être accueillis par *APRR* dans leurs locaux de Saint-Apollinaire. Un grand merci à eux pour leur soutien à la communauté tech locale !
+🏢 Pour cette édition spéciale, *https://voyage.aprr.fr/[APRR]* nous fait le plaisir de nous accueillir dans ses locaux de Saint-Apollinaire. Un grand merci à toute son équipe pour son soutien à la communauté tech locale !
 
 🍕 Et parce qu’on ne change pas une équipe qui gagne, nous clôturerons ces échanges autour d’un *buffet dînatoire*. L’occasion parfaite pour approfondir les sujets abordés et refaire le monde (du code) avec vos pairs.
 
-🔍 Que vous soyez développeur, Ops, chef de projet informatique ou simple curieux de l’innovation, ne manquez pas ce rendez-vous incontournable de l’écosystème dijonnais.
+🔍 Que vous soyez développeuse ou développeur, Ops, cheffe ou chef de projet informatique, ou simplement curieuse ou curieux d’innovation, ne manquez pas ce rendez-vous incontournable de l’écosystème dijonnais.
 
 📅 *Jeudi 25 juin 2026 – de 17h00 à 20h00* 📍 *Siège social APRR*, Saint-Apollinaire
 
