@@ -59,7 +59,7 @@ disableKinds = ["taxonomy"]
 [params]
   description = "Association de bénévoles qui fédère et anime la communauté des développeuses et développeurs de la région dijonnaise."
   contact = "developers.group.dijon@gmail.com"
-  repo = "https://github.com/developers-group-dijon/site"
+  repo = "https://github.com/developers-group-dijon/site" # lien « Modifier cette page », hors production uniquement (site de test, hugo server)
   mainSections = ["posts"]
 
   [params.social]

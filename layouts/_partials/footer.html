@@ -16,7 +16,7 @@
     </ul>
     <div class="site-footer__tech">
       Propulsé par <a href="https://gohugo.io/">Hugo</a>
-      {{- if and site.Params.repo .File }}<br><a href="{{ site.Params.repo }}/edit/main/content/{{ .File.Path }}">Modifier cette page</a>{{ end }}
+      {{- if and site.Params.repo .File (not hugo.IsProduction) }}<br><a href="{{ site.Params.repo }}/edit/main/content/{{ .File.Path }}">Modifier cette page</a>{{ end }}
     </div>
   </div>
 </footer>
