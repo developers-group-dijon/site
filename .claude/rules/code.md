@@ -41,6 +41,6 @@ Chaque page doit être lisible et utilisable de 320 px à 1920 px de large.
 - HTML sémantique : `<header>`, `<nav>`, `<main>`, `<article>`, `<footer>`, un seul `<h1>` par page, niveaux de titres sans saut.
 - Chaque image porteuse de sens a un texte alternatif ; une image décorative a `alt=""`.
 - Contraste suffisant (WCAG AA) avec les couleurs de la charte définies dans `:root`.
-- Les liens externes s'ouvrent dans un nouvel onglet : `target="_blank" rel="noopener"` dans les gabarits ; pour les contenus, `.Content` passe par le partial `liens-externes.html`, qui ajoute ces attributs (ne pas afficher `.Content` sans lui).
+- Un seul composant pour les liens : dans les gabarits, aucune balise `<a>` écrite à la main, toujours `{{ partial "lien.html" (dict "url" … "texte" …) }}` (paramètres `class` et `attributs` au besoin) ; `.Content` est toujours affiché via `{{ partial "lien/contenu.html" .Content }}`. Le composant décide seul interne ou externe d'après le domaine (`params.domaine`, sous-domaines compris) : un lien externe s'ouvre dans un nouvel onglet avec l'indicateur ↗.
 - Le focus clavier reste visible (`:focus-visible`) et le lien d'évitement « Aller au contenu » est conservé.
 - Images en WebP, redimensionnées à la taille d'affichage utile.

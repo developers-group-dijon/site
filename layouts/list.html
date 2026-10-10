@@ -3,13 +3,13 @@
 {{- if eq .Kind "home" }}{{ $pages = where site.RegularPages "Section" "posts" }}{{ end }}
 <section class="page-tete dither">
   <div class="wrap">
-    <div class="ariane"><a href="/">Accueil</a></div>
+    <div class="ariane">{{ partial "lien.html" (dict "url" "/" "texte" "Accueil") }}</div>
     <h1>{{ .Title }}</h1>
     {{- with .Description }}<p>{{ . }}</p>{{ end }}
     {{- if .Params.agenda }}{{ with site.Home.OutputFormats.Get "agenda" }}
     <div class="actions">
-      <a class="btn btn--secondaire" href="{{ .Permalink | safeURL }}">S'inscrire à l'agenda</a>
-      <a class="btn btn--secondaire" href="{{ .RelPermalink }}" download>Télécharger l'agenda</a>
+      {{ partial "lien.html" (dict "url" .Permalink "texte" "S'inscrire à l'agenda" "class" "btn btn--secondaire") }}
+      {{ partial "lien.html" (dict "url" .RelPermalink "texte" "Télécharger l'agenda" "class" "btn btn--secondaire" "attributs" (dict "download" "")) }}
     </div>
     {{- end }}{{ end }}
   </div>
@@ -33,11 +33,11 @@
   {{- if gt $pager.TotalPages 1 }}
   <nav aria-label="Pagination">
     <ul class="pagination">
-      {{- with $pager.Prev }}<li><a href="{{ .URL }}" rel="prev">← Plus récents</a></li>{{ end }}
+      {{- with $pager.Prev }}<li>{{ partial "lien.html" (dict "url" .URL "texte" "← Plus récents" "attributs" (dict "rel" "prev")) }}</li>{{ end }}
       {{- range $pager.Pagers }}
-      <li{{ if eq . $pager }} class="active"{{ end }}>{{ if eq . $pager }}<span aria-current="page">{{ .PageNumber }}</span>{{ else }}<a href="{{ .URL }}">{{ .PageNumber }}</a>{{ end }}</li>
+      <li{{ if eq . $pager }} class="active"{{ end }}>{{ if eq . $pager }}<span aria-current="page">{{ .PageNumber }}</span>{{ else }}{{ partial "lien.html" (dict "url" .URL "texte" (string .PageNumber)) }}{{ end }}</li>
       {{- end }}
-      {{- with $pager.Next }}<li><a href="{{ .URL }}" rel="next">Plus anciens →</a></li>{{ end }}
+      {{- with $pager.Next }}<li>{{ partial "lien.html" (dict "url" .URL "texte" "Plus anciens →" "attributs" (dict "rel" "next")) }}</li>{{ end }}
     </ul>
   </nav>
   {{- end }}

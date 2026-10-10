@@ -1,0 +1,24 @@
+{{- /*
+  Applique la règle des liens du site au HTML d'un contenu Asciidoc :
+  - lien externe : target="_blank" rel="noopener" et indicateur ↗ ;
+  - lien interne : même onglet (un éventuel window=_blank est retiré).
+  Les liens produits par le shortcode lien (déjà marqués) sont laissés tels quels.
+  Usage : {{ partial "lien/contenu.html" .Content }}
+*/ -}}
+{{- $html := string . -}}
+{{- $indicateur := string (partial "lien/indicateur.html" .) -}}
+{{- range uniq (findRE `(?s)<a\b[^>]*>.*?</a>` $html) -}}
+  {{- if not (strings.Contains . `class="lien-externe"`) -}}
+    {{- $ouvrante := index (findRE `^<a\b[^>]*>` .) 0 -}}
+    {{- $corps := strings.TrimSuffix "</a>" (strings.TrimPrefix $ouvrante .) -}}
+    {{- $nouvelle := replaceRE `\s(?:target="_blank"|rel="noopener")` "" $ouvrante -}}
+    {{- $href := "" -}}
+    {{- with findRESubmatch `\shref="([^"]*)"` $nouvelle 1 }}{{ $href = index . 0 1 }}{{ end -}}
+    {{- if and $href (partial "lien/externe.html" $href) -}}
+      {{- $nouvelle = replace $nouvelle (printf `href="%s"` $href) (printf `href="%s" target="_blank" rel="noopener"` $href) -}}
+      {{- $corps = printf "%s%s" $corps $indicateur -}}
+    {{- end -}}
+    {{- $html = replace $html . (printf "%s%s</a>" $nouvelle $corps) -}}
+  {{- end -}}
+{{- end -}}
+{{- $html | safeHTML -}}

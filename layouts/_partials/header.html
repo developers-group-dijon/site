@@ -1,8 +1,7 @@
 <header class="site-header">
   <div class="wrap">
-    <a class="logo" href="/" aria-label="Developers Group Dijon — accueil">
-      <img src="/images/logo-dgd-blanc.webp" alt="Developers Group Dijon" width="120" height="52">
-    </a>
+    {{- $logo := `<img src="/images/logo-dgd-blanc.webp" alt="Developers Group Dijon" width="120" height="52">` | safeHTML }}
+    {{ partial "lien.html" (dict "url" "/" "texte" $logo "class" "logo" "attributs" (dict "aria-label" "Developers Group Dijon — accueil")) }}
     <nav class="nav" aria-label="Navigation principale">
       {{- $courant := . }}
       {{- range site.Menus.main }}
@@ -10,9 +9,9 @@
         {{- if and (not $actif) $courant.IsPage (eq .URL "/category/evenements/") }}
           {{- $actif = in $courant.Params.categories "evenements" }}
         {{- end }}
-        <a href="{{ .URL }}"{{ if $actif }} aria-current="page"{{ end }}>{{ .Name }}</a>
+        {{ partial "lien.html" (dict "url" .URL "texte" .Name "attributs" (cond $actif (dict "aria-current" "page") dict)) }}
       {{- end }}
-      <a class="btn btn--accent" href="{{ site.Params.devfest.url }}" target="_blank" rel="noopener">{{ replace site.Params.devfest.titre " Dijon" "" }}</a>
+      {{ partial "lien.html" (dict "url" site.Params.devfest.url "texte" (replace site.Params.devfest.titre " Dijon" "") "class" "btn btn--accent") }}
     </nav>
   </div>
 </header>

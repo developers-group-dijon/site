@@ -3,8 +3,8 @@
 <section class="page-tete dither">
   <div class="wrap">
     <div class="ariane">
-      <a href="/">Accueil</a>
-      {{- if eq .Section "posts" }} / <a href="{{ if $evt }}/category/evenements/{{ else }}/category/news/{{ end }}">{{ if $evt }}Événements{{ else }}News{{ end }}</a>{{ end }}
+      {{ partial "lien.html" (dict "url" "/" "texte" "Accueil") }}
+      {{- if eq .Section "posts" }} / {{ partial "lien.html" (dict "url" (cond $evt "/category/evenements/" "/category/news/") "texte" (cond $evt "Événements" "News")) }}{{ end }}
     </div>
     <h1>{{ .Title }}</h1>
     {{- if eq .Section "posts" }}
@@ -25,7 +25,7 @@
         {{- with .Params.auteur }} · {{ . }}{{ end }}
       </div>
       {{- end }}
-      {{ partial "liens-externes.html" .Content }}
+      {{ partial "lien/contenu.html" .Content }}
     </article>
     {{- with .Params.evenement }}{{ partial "infos.html" $ }}{{ end }}
   </div>

@@ -6,8 +6,8 @@
       <h1>Page introuvable</h1>
       <p>Cette page n'existe pas (ou plus). Elle a peut-être changé d'adresse lors de la refonte du site.</p>
       <div class="actions">
-        <a class="btn" href="/">Retour à l'accueil</a>
-        <a class="btn btn--secondaire" href="/category/news/">Toutes les news</a>
+        {{ partial "lien.html" (dict "url" "/" "texte" "Retour à l'accueil" "class" "btn") }}
+        {{ partial "lien.html" (dict "url" "/category/news/" "texte" "Toutes les news" "class" "btn btn--secondaire") }}
       </div>
     </div>
   </div>

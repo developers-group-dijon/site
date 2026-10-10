@@ -29,7 +29,7 @@
   {{- end }}
 </head>
 <body>
-  <a class="skip" href="#contenu">Aller au contenu</a>
+  {{ partial "lien.html" (dict "url" "#contenu" "texte" "Aller au contenu" "class" "skip") }}
   {{ partial "header.html" . }}
   <main id="contenu">
     {{ block "main" . }}{{ end }}

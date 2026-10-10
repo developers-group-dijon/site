@@ -1,7 +1,7 @@
 {{ define "main" }}
 <section class="page-tete dither">
   <div class="wrap">
-    <div class="ariane"><a href="/">Accueil</a></div>
+    <div class="ariane">{{ partial "lien.html" (dict "url" "/" "texte" "Accueil") }}</div>
     <h1>{{ .Title }}</h1>
     {{- with .Description }}<p>{{ . }}</p>{{ end }}
   </div>
@@ -9,7 +9,7 @@
 <div class="wrap">
   <div class="article">
     <article class="prose">
-      {{ partial "liens-externes.html" .Content }}
+      {{ partial "lien/contenu.html" .Content }}
     </article>
   </div>
 </div>

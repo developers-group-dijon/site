@@ -46,6 +46,8 @@ a:hover { color: var(--rose); }
 :focus-visible { outline: 3px solid var(--jaune); outline-offset: 2px; }
 h1, h2, h3, h4 { font-family: var(--px); font-weight: 500; line-height: 1.15; margin: 0; }
 .px { font-family: var(--px); }
+.lien-externe { display: inline-block; margin-inline-start: .25em; font-size: .8em; line-height: 1; text-decoration: none; }
+.partenaires .lien-externe { display: none; } /* le logo suffit ; la mention reste pour les lecteurs d'écran */
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .skip { position: absolute; left: 8px; top: -60px; z-index: 10; background: var(--jaune); color: var(--noir); padding: 10px 14px; font-family: var(--px); }
 .skip:focus { top: 8px; }

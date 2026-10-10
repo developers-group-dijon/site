@@ -1,0 +1,22 @@
+{{- /*
+  Lien dans un contenu, avec le rendu standard du site (voir _partials/lien.html).
+  {{< lien "https://atolcd.com" "Atol CD" />}}
+  {{< lien url="https://my.weezevent.com/…" role="button" >}}Je m'inscris !{{< /lien >}}
+  role (facultatif) : button, video ou map, comme role= en Asciidoc.
+  Sans texte, l'URL est affichée.
+*/ -}}
+{{- $url := "" -}}
+{{- $texte := "" -}}
+{{- $role := "" -}}
+{{- if .IsNamedParams -}}
+  {{- $url = .Get "url" -}}
+  {{- $texte = .Get "texte" -}}
+  {{- $role = .Get "role" -}}
+{{- else -}}
+  {{- $url = .Get 0 -}}
+  {{- $texte = .Get 1 -}}
+  {{- $role = .Get 2 -}}
+{{- end -}}
+{{- if not $url }}{{ errorf "shortcode lien : url manquante (%s)" .Position }}{{ end -}}
+{{- with strings.TrimSpace .Inner }}{{ $texte = . }}{{ end -}}
+{{- partial "lien.html" (dict "url" $url "texte" (default $url $texte) "class" $role) -}}

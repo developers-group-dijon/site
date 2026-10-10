@@ -71,6 +71,9 @@ disableKinds = ["taxonomy"]
   contact = "developers.group.dijon@gmail.com"
   repo = "https://github.com/developers-group-dijon/site" # lien « Modifier cette page », hors production uniquement (site de test, hugo server)
   mainSections = ["posts"]
+  # Liens internes : ce domaine et tous ses sous-domaines (www, devfest…).
+  # Les autres liens http(s) s'ouvrent dans un nouvel onglet (partial lien/externe.html).
+  domaine = "developers-group-dijon.fr"
 
   [params.social]
     youtube = "https://www.youtube.com/@developersgroupdijon3650"

@@ -3,23 +3,23 @@
     <div class="site-footer__asso">
       <span class="site-footer__nom">Developers Group Dijon</span>
       <small>Association de bénévoles · Dijon</small>
-      <a href="/code-de-conduite/">Code de conduite</a>
-      <a href="mailto:{{ site.Params.contact }}">{{ site.Params.contact }}</a>
+      {{ partial "lien.html" (dict "url" "/code-de-conduite/" "texte" "Code de conduite") }}
+      {{ partial "lien.html" (dict "url" (printf "mailto:%s" site.Params.contact) "texte" site.Params.contact) }}
     </div>
     <ul class="reseaux" aria-label="Réseaux">
       {{- with site.Params.social }}
-      <li><a href="{{ .youtube }}" target="_blank" rel="noopener">YouTube</a></li>
-      <li><a href="{{ .discord }}" target="_blank" rel="noopener">Discord</a></li>
-      <li><a href="{{ .linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li>{{ partial "lien.html" (dict "url" .youtube "texte" "YouTube") }}</li>
+      <li>{{ partial "lien.html" (dict "url" .discord "texte" "Discord") }}</li>
+      <li>{{ partial "lien.html" (dict "url" .linkedin "texte" "LinkedIn") }}</li>
       {{- end }}
-      <li><a href="/index.xml">RSS</a></li>
+      <li>{{ partial "lien.html" (dict "url" "/index.xml" "texte" "RSS") }}</li>
       {{- with site.Home.OutputFormats.Get "agenda" }}
-      <li><a href="{{ .Permalink | safeURL }}">Agenda</a></li>
+      <li>{{ partial "lien.html" (dict "url" .Permalink "texte" "Agenda") }}</li>
       {{- end }}
     </ul>
     <div class="site-footer__tech">
-      Propulsé par <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
-      {{- if and site.Params.repo .File (not hugo.IsProduction) }}<br><a href="{{ site.Params.repo }}/edit/main/content/{{ .File.Path }}" target="_blank" rel="noopener">Modifier cette page</a>{{ end }}
+      Propulsé par {{ partial "lien.html" (dict "url" "https://gohugo.io/" "texte" "Hugo") }}
+      {{- if and site.Params.repo .File (not hugo.IsProduction) }}<br>{{ partial "lien.html" (dict "url" (printf "%s/edit/main/content/%s" site.Params.repo .File.Path) "texte" "Modifier cette page") }}{{ end }}
     </div>
   </div>
 </footer>

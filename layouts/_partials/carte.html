@@ -14,7 +14,7 @@
     <time class="carte__date" datetime="{{ $p.Date.Format "2006-01-02" }}">
       {{- with $p.Params.evenement }}{{ (time.AsTime .date) | time.Format ":date_long" }}{{ else }}{{ $p.Date | time.Format ":date_long" }}{{ end -}}
     </time>
-    <h3><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+    <h3>{{ partial "lien.html" (dict "url" $p.RelPermalink "texte" $p.Title) }}</h3>
     <p>{{ or $p.Params.summary $p.Summary | plainify | htmlUnescape | truncate 160 }}</p>
   </div>
 </article>
