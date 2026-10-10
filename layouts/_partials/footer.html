@@ -8,9 +8,9 @@
     </div>
     <ul class="reseaux" aria-label="Réseaux">
       {{- with site.Params.social }}
-      <li><a href="{{ .youtube }}">YouTube</a></li>
-      <li><a href="{{ .discord }}">Discord</a></li>
-      <li><a href="{{ .linkedin }}">LinkedIn</a></li>
+      <li><a href="{{ .youtube }}" target="_blank" rel="noopener">YouTube</a></li>
+      <li><a href="{{ .discord }}" target="_blank" rel="noopener">Discord</a></li>
+      <li><a href="{{ .linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>
       {{- end }}
       <li><a href="/index.xml">RSS</a></li>
       {{- with site.Home.OutputFormats.Get "agenda" }}
@@ -18,8 +18,8 @@
       {{- end }}
     </ul>
     <div class="site-footer__tech">
-      Propulsé par <a href="https://gohugo.io/">Hugo</a>
-      {{- if and site.Params.repo .File (not hugo.IsProduction) }}<br><a href="{{ site.Params.repo }}/edit/main/content/{{ .File.Path }}">Modifier cette page</a>{{ end }}
+      Propulsé par <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>
+      {{- if and site.Params.repo .File (not hugo.IsProduction) }}<br><a href="{{ site.Params.repo }}/edit/main/content/{{ .File.Path }}" target="_blank" rel="noopener">Modifier cette page</a>{{ end }}
     </div>
   </div>
 </footer>
