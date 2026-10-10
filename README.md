@@ -61,7 +61,21 @@ link:https://www.openstreetmap.org/search?query=...[Voir sur la carte,role=map]
 
 Les vidéos et les cartes sont des liens, pas des iframes. On garde ainsi zéro JavaScript et aucun traceur tiers.
 
-Les liens externes (`http://` ou `https://` vers un autre site) s'ouvrent automatiquement dans un nouvel onglet : inutile d'ajouter `window=_blank`. Les liens internes (`link:/association/[…]`) restent dans le même onglet.
+#### Liens
+
+Tous les liens du site suivent la même règle, selon le domaine :
+
+- **internes** : liens relatifs (`link:/association/[…]`) et tout `developers-group-dijon.fr`, sous-domaines compris (`devfest.developers-group-dijon.fr`…) → même onglet ;
+- **externes** : tout autre site → nouvel onglet, avec une flèche ↗ et la mention « (nouvel onglet) » pour les lecteurs d'écran.
+
+C'est automatique pour les liens Asciidoc : inutile d'ajouter `window=_blank`. Le shortcode `lien` donne le même résultat :
+
+```asciidoc
+{{< lien "https://atolcd.com" "Atol CD" />}}
+{{< lien url="https://my.weezevent.com/..." role="button" >}}Je m'inscris !{{< /lien >}}
+```
+
+Côté gabarits, tout lien passe par le partial `layouts/_partials/lien.html` ; le domaine interne est le paramètre `domaine` de `hugo.toml`.
 
 ### Autres contenus
 

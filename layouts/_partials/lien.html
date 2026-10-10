@@ -1,0 +1,19 @@
+{{- /*
+  Composant commun à tous les liens du site (gabarits, shortcode lien et
+  liens des contenus via lien/contenu.html).
+  Paramètres (dict) :
+    url        obligatoire : relative (/association/), absolue, mailto:, webcal:
+    texte      chaîne (échappée) ou HTML marqué safeHTML (image, icône SVG)
+    class      facultatif
+    attributs  facultatif : dict d'attributs en plus (aria-current, rel, download…)
+  Lien externe (voir lien/externe.html) : nouvel onglet et indicateur ↗.
+  Exemple : {{ partial "lien.html" (dict "url" .url "texte" "Le site" "class" "btn") }}
+*/ -}}
+{{- $externe := partial "lien/externe.html" .url -}}
+{{- $href := .url -}}
+{{- /* html/template neutralise les schémas inconnus : webcal: est sûr */ -}}
+{{- if strings.HasPrefix (lower (string .url)) "webcal:" }}{{ $href = safeURL .url }}{{ end -}}
+<a href="{{ $href }}"{{ with .class }} class="{{ . }}"{{ end }}
+{{- range $nom, $valeur := .attributs }} {{ printf `%s="%s"` $nom (htmlEscape (string $valeur)) | safeHTMLAttr }}{{ end }}
+{{- if $externe }} target="_blank" rel="noopener"{{ end }}>{{ .texte }}{{ if $externe }}{{ partial "lien/indicateur.html" . }}{{ end }}</a>
+{{- /**/ -}}

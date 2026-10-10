@@ -31,6 +31,7 @@ hugo new content posts/AAAA-MM-JJ-sujet-court/index.adoc
 - Un premier paragraphe qui dit l'essentiel : quoi, quand, où, pour qui.
 - Des sections `==` courtes, des listes pour les programmes.
 - Les appels à l'action en boutons : `link:URL[Je m'inscris !,role=button]`.
+- Liens : syntaxe Asciidoc ou shortcode `{{< lien "URL" "texte" />}}`. Ne pas ajouter `window=_blank` : l'ouverture dans un nouvel onglet des liens externes est automatique.
 - Vidéos et cartes en liens (`role=video`, `role=map`), jamais en iframe.
 - Le `summary` fait une ou deux phrases, sans point médian.
 - Ton : chaleureux et direct, en vouvoyant le public. Emojis avec modération.

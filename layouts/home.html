@@ -6,8 +6,8 @@
       <h1>{{ .Params.titre_hero }}</h1>
       <p>{{ .Params.sous_titre }}</p>
       <div class="actions">
-        <a class="btn" href="/category/evenements/">Nos événements</a>
-        <a class="btn btn--secondaire" href="{{ site.Params.social.discord }}" target="_blank" rel="noopener">Rejoindre le Discord</a>
+        {{ partial "lien.html" (dict "url" "/category/evenements/" "texte" "Nos événements" "class" "btn") }}
+        {{ partial "lien.html" (dict "url" site.Params.social.discord "texte" "Rejoindre le Discord" "class" "btn btn--secondaire") }}
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@
       <img src="/images/logo-devfest.webp" alt="DevFest Dijon" width="220" height="92">
       <div class="devfest__date">{{ .date }}</div>
       <div class="devfest__lieu">{{ .lieu }}<br>{{ .adresse }}</div>
-      <a class="btn btn--petit" href="{{ .url }}" target="_blank" rel="noopener">Voir le site du DevFest →</a>
+      {{ partial "lien.html" (dict "url" .url "texte" "Voir le site du DevFest →" "class" "btn btn--petit") }}
     </div>
   </div>
 </section>
@@ -35,7 +35,7 @@
   <div class="wrap">
     <div class="section__tete">
       <h2 id="news-titre">Événements &amp; news</h2>
-      <a class="lien-px" href="/category/news/">Tout voir →</a>
+      {{ partial "lien.html" (dict "url" "/category/news/" "texte" "Tout voir →" "class" "lien-px") }}
     </div>
     {{- $posts := where site.RegularPages "Section" "posts" }}
     {{- $avenir := slice }}
@@ -53,8 +53,8 @@
   <div class="wrap qui">
     <div class="qui__texte">
       <h2 id="qui-titre">Qui sommes-nous ?</h2>
-      {{ partial "liens-externes.html" .Content }}
-      <a class="lien-px" href="/association/">L'équipe et l'association →</a>
+      {{ partial "lien/contenu.html" .Content }}
+      {{ partial "lien.html" (dict "url" "/association/" "texte" "L'équipe et l'association →" "class" "lien-px") }}
     </div>
     <div class="chiffres">
       <div class="chiffre"><strong>2022</strong><span>création de l'association</span></div>
@@ -81,8 +81,8 @@
         <p>L'association est ouverte à toutes les structures — entreprises, startups, écoles, laboratoires, organismes publics — sans frais d'adhésion. Chacun participe quand il peut !</p>
       </div>
       <div class="actions">
-        <a class="btn" href="/association/#rejoignez-nous">En savoir plus</a>
-        <a class="btn btn--secondaire" href="mailto:{{ site.Params.contact }}">Nous écrire</a>
+        {{ partial "lien.html" (dict "url" "/association/#rejoignez-nous" "texte" "En savoir plus" "class" "btn") }}
+        {{ partial "lien.html" (dict "url" (printf "mailto:%s" site.Params.contact) "texte" "Nous écrire" "class" "btn btn--secondaire") }}
       </div>
     </div>
   </div>

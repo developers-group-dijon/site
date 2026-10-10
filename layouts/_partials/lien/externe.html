@@ -1,0 +1,15 @@
+{{- /*
+  Indique si une URL est externe : renvoie true pour un lien http(s) hors du
+  domaine du site (params.domaine dans hugo.toml). Ce domaine et tous ses
+  sous-domaines (www., devfest., www-test.…) sont internes, comme les liens
+  relatifs, les ancres et les autres schémas (mailto:, webcal:…).
+  Usage : {{ if partial "lien/externe.html" $url }}…{{ end }}
+*/ -}}
+{{- $externe := false -}}
+{{- $u := urls.Parse (htmlUnescape (string .)) -}}
+{{- if in (slice "http" "https") (lower $u.Scheme) -}}
+  {{- $hote := lower $u.Hostname -}}
+  {{- $domaine := lower site.Params.domaine -}}
+  {{- $externe = not (or (eq $hote $domaine) (strings.HasSuffix $hote (printf ".%s" $domaine))) -}}
+{{- end -}}
+{{- return $externe -}}
