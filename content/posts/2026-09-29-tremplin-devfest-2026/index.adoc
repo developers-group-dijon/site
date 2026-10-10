@@ -13,7 +13,7 @@ evenement:
   lieu: "BPCE-SI, 13 bis avenue Albert 1er, Dijon"
   carte: "https://www.openstreetmap.org/search?query=13+bis+Av.+Albert+1er,+21000+Dijon"
   places: "50 maximum"
-  inscription: "https://my.weezevent.com/tremplin-devfest-2026"
+  inscription: "https://www.meetup.com/craftsrecords/events/316873288/"
   prix: "Gratuit"
 outputs: ["html", "calendar"]
 ---
