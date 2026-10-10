@@ -61,6 +61,8 @@ link:https://www.openstreetmap.org/search?query=...[Voir sur la carte,role=map]
 
 Les vidéos et les cartes sont des liens, pas des iframes. On garde ainsi zéro JavaScript et aucun traceur tiers.
 
+Les liens externes (`http://` ou `https://` vers un autre site) s'ouvrent automatiquement dans un nouvel onglet : inutile d'ajouter `window=_blank`. Les liens internes (`link:/association/[…]`) restent dans le même onglet.
+
 ### Autres contenus
 
 - **Bandeau DevFest de l'accueil** : section `[params.devfest]` de `hugo.toml`, à mettre à jour chaque année.

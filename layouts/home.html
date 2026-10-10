@@ -7,7 +7,7 @@
       <p>{{ .Params.sous_titre }}</p>
       <div class="actions">
         <a class="btn" href="/category/evenements/">Nos événements</a>
-        <a class="btn btn--secondaire" href="{{ site.Params.social.discord }}">Rejoindre le Discord</a>
+        <a class="btn btn--secondaire" href="{{ site.Params.social.discord }}" target="_blank" rel="noopener">Rejoindre le Discord</a>
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@
       <img src="/images/logo-devfest.webp" alt="DevFest Dijon" width="220" height="92">
       <div class="devfest__date">{{ .date }}</div>
       <div class="devfest__lieu">{{ .lieu }}<br>{{ .adresse }}</div>
-      <a class="btn btn--petit" href="{{ .url }}">Voir le site du DevFest →</a>
+      <a class="btn btn--petit" href="{{ .url }}" target="_blank" rel="noopener">Voir le site du DevFest →</a>
     </div>
   </div>
 </section>
@@ -53,7 +53,7 @@
   <div class="wrap qui">
     <div class="qui__texte">
       <h2 id="qui-titre">Qui sommes-nous ?</h2>
-      {{ .Content }}
+      {{ partial "liens-externes.html" .Content }}
       <a class="lien-px" href="/association/">L'équipe et l'association →</a>
     </div>
     <div class="chiffres">

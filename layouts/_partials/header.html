@@ -12,7 +12,7 @@
         {{- end }}
         <a href="{{ .URL }}"{{ if $actif }} aria-current="page"{{ end }}>{{ .Name }}</a>
       {{- end }}
-      <a class="btn btn--accent" href="{{ site.Params.devfest.url }}">{{ replace site.Params.devfest.titre " Dijon" "" }}</a>
+      <a class="btn btn--accent" href="{{ site.Params.devfest.url }}" target="_blank" rel="noopener">{{ replace site.Params.devfest.titre " Dijon" "" }}</a>
     </nav>
   </div>
 </header>

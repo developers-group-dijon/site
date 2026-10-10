@@ -25,7 +25,7 @@
         {{- with .Params.auteur }} · {{ . }}{{ end }}
       </div>
       {{- end }}
-      {{ .Content }}
+      {{ partial "liens-externes.html" .Content }}
     </article>
     {{- with .Params.evenement }}{{ partial "infos.html" $ }}{{ end }}
   </div>
