@@ -1,0 +1,117 @@
+name: Publication — traitement
+
+# Fait avancer une issue de publication d'une étape avec
+# scripts/publication/traiter-issue.py, sur un runner GitHub :
+# - Claude Code s'authentifie avec un token d'abonnement (CLAUDE_CODE_OAUTH_TOKEN,
+#   généré par « claude setup-token ») ;
+# - la branche, la Pull Request et les commentaires sont faits avec le jeton
+#   d'une GitHub App de l'association, ce qui déclenche la CI (workflow Site).
+#
+# Appelé par publication-gardien.yml quand il pose « publication:a-traiter ».
+# Lançable à la main depuis l'onglet Actions pour relancer une issue, ou toutes
+# celles en attente si le numéro est laissé vide.
+# Configuration : voir scripts/publication/README.md.
+
+on:
+  workflow_call:
+    inputs:
+      issue:
+        type: string
+        required: true
+  workflow_dispatch:
+    inputs:
+      issue:
+        description: "Numéro de l'issue (vide : toutes les issues « publication:a-traiter »)"
+        type: string
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  traiter:
+    runs-on: ubuntu-26.04
+    # Secrets et variables de l'environnement « publication », réservé à main.
+    environment: publication
+    timeout-minutes: 45
+    # Un seul traitement à la fois par issue. Un traitement en attente peut
+    # être remplacé par un plus récent : chaque passage relit tout l'état de
+    # l'issue, rien n'est perdu.
+    concurrency:
+      group: publication-traitement-${{ inputs.issue || 'toutes' }}
+      cancel-in-progress: false
+    steps:
+      - name: Vérifier le numéro d'issue
+        env:
+          ISSUE: ${{ inputs.issue }}
+        run: |
+          if ! [[ "$ISSUE" =~ ^[0-9]*$ ]]; then
+            echo "::error::Numéro d'issue invalide : $ISSUE"
+            exit 1
+          fi
+
+      - name: Jeton de la GitHub App
+        id: app
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.PUBLICATION_APP_CLIENT_ID }}
+          private-key: ${{ secrets.PUBLICATION_APP_PRIVATE_KEY }}
+          permission-contents: write
+          permission-issues: write
+          permission-pull-requests: write
+
+      # Les scripts, les consignes et la liste des membres sont ceux de main.
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          fetch-depth: 0
+          token: ${{ steps.app.outputs.token }}
+
+      - name: Identité git du bot
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          BOT: ${{ steps.app.outputs.app-slug }}[bot]
+        run: |
+          id="$(gh api "/users/$BOT" --jq .id)"
+          git config --global user.name "$BOT"
+          git config --global user.email "$id+$BOT@users.noreply.github.com"
+
+      - name: Installer Claude Code, resvg et cwebp
+        run: |
+          npm install --global @anthropic-ai/claude-code@stable
+          curl -fsSL https://github.com/linebender/resvg/releases/download/v0.48.1/resvg-linux-x86_64.tar.gz \
+            | sudo tar -xz -C /usr/local/bin resvg
+          sudo apt-get update && sudo apt-get install -y webp
+          claude --version
+          resvg --version
+
+      - name: Traiter
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          PUBLICATION_BOT: ${{ steps.app.outputs.app-slug }}[bot]
+          PUBLICATION_MODELE: ${{ vars.PUBLICATION_MODELE || 'sonnet' }}
+          ISSUE: ${{ inputs.issue }}
+        run: |
+          # $ISSUE vide : toutes les issues « publication:a-traiter ».
+          python3 scripts/publication/traiter-issue.py $ISSUE
+
+      - name: Conserver les journaux de Claude
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: publication-${{ inputs.issue || 'toutes' }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: .publication/*.log
+          include-hidden-files: true
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Signaler l'échec dans l'issue
+        if: failure() && inputs.issue != ''
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          DEPOT: ${{ github.repository }}
+          ISSUE: ${{ inputs.issue }}
+          JOURNAL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh issue comment "$ISSUE" --repo "$DEPOT" --body "Le traitement automatique a échoué ([journal]($JOURNAL)). La demande reste en attente (label \`publication:a-traiter\`) : relancez le workflow « Publication — traitement » depuis l'onglet Actions une fois le problème réglé."
