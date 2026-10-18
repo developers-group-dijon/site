@@ -13,6 +13,14 @@ Les règles de développement (zéro JavaScript, compatibilité mobile) et de r�
 3. Ouvrez une Pull Request vers `main`. La CI vérifie que le site se construit.
 4. Une fois la PR mergée, le site est publié automatiquement sur le serveur en SFTP.
 
+### Demander une publication par une issue
+
+Les membres de l'association peuvent demander la publication d'un événement ou d'une news sans toucher au code : ouvrez une issue avec le formulaire **Annoncer un événement** ou **Publier une news**, et remplissez les champs. Des notes en vrac suffisent pour la description.
+
+Un gardien automatique vérifie la demande et y répond avec les commandes de validation (`/visuel-site 2`, `/texte-site ok`, `/modifier-site titre plus court`…), à écrire en commentaire, une par ligne. Une commande acceptée reçoit un 👍 ; une commande refusée reçoit une réponse qui explique pourquoi.
+
+Seules les personnes listées dans [`scripts/publication/membres.txt`](scripts/publication/membres.txt) peuvent demander une publication et la valider. Pour ajouter un membre, ouvrez une Pull Request sur ce fichier. Fonctionnement et installation : [`scripts/publication/README.md`](scripts/publication/README.md).
+
 ### Nouvel article ou événement
 
 ```sh
