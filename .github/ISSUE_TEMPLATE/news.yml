@@ -1,0 +1,78 @@
+name: Publier une news
+description: Demander la publication d'une actualité sur le site (réservé aux membres de l'association).
+title: "[News] "
+labels: ["publication", "type:news"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! Une fois la demande envoyée, Claude propose **trois vignettes** et le **texte de l'article** en commentaire de cette issue.
+        Les commandes de validation sont décrites dans le premier commentaire. Seuls les membres listés dans `scripts/publication/membres.txt` peuvent déclencher la publication.
+
+        Ne mettez que des informations confirmées : ce qui manque sera demandé plutôt qu'inventé.
+
+  - type: input
+    id: titre
+    attributes:
+      label: Titre de la news
+      placeholder: "Retour sur le DevFest Dijon 2026"
+    validations:
+      required: true
+
+  - type: textarea
+    id: contenu
+    attributes:
+      label: Contenu
+      description: Le message à faire passer. Des notes en vrac suffisent, Claude rédige l'article.
+    validations:
+      required: true
+
+  - type: textarea
+    id: liens
+    attributes:
+      label: Liens utiles
+      description: Vidéos, photos, pages à mettre en lien. Un lien par ligne.
+    validations:
+      required: false
+
+  - type: textarea
+    id: partenaires
+    attributes:
+      label: Partenaires et sponsors à citer
+      description: Avec l'adresse de leur site web (chaque partenaire cité a un lien dans l'article).
+    validations:
+      required: false
+
+  - type: textarea
+    id: images
+    attributes:
+      label: Images
+      description: Glissez-déposez ici les logos ou photos à utiliser dans les visuels (PNG ou JPEG de préférence).
+    validations:
+      required: false
+
+  - type: input
+    id: date-publication
+    attributes:
+      label: Date de publication souhaitée
+      description: Laisser vide pour publier dès que possible.
+      placeholder: "20/10/2026"
+    validations:
+      required: false
+
+  - type: input
+    id: auteur
+    attributes:
+      label: Signature de l'article
+      description: Nom affiché comme auteur ou autrice de l'article.
+      placeholder: "Prénom Nom"
+    validations:
+      required: true
+
+  - type: textarea
+    id: remarques
+    attributes:
+      label: Indications pour les visuels ou le texte
+      description: Ambiance, éléments à mettre en avant, choses à éviter…
+    validations:
+      required: false

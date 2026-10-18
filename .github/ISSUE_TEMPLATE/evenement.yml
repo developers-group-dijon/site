@@ -1,0 +1,145 @@
+name: Annoncer un événement
+description: Demander la publication d'un événement sur le site (réservé aux membres de l'association).
+title: "[Événement] "
+labels: ["publication", "type:evenement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci ! Une fois la demande envoyée, Claude propose **trois vignettes** et le **texte de l'article** en commentaire de cette issue.
+        Les commandes de validation sont décrites dans le premier commentaire. Seuls les membres listés dans `scripts/publication/membres.txt` peuvent déclencher la publication.
+
+        Ne mettez que des informations confirmées : ce qui manque sera demandé plutôt qu'inventé.
+
+  - type: input
+    id: titre
+    attributes:
+      label: Titre de l'événement
+      placeholder: "Tremplin DevFest 2026"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: format
+    attributes:
+      label: Format
+      options:
+        - Meetup / conférences
+        - Atelier
+        - Starter Lab
+        - Bar Camp
+        - Pitch Party
+        - Speed Teching
+        - DevFest
+        - Autre (préciser dans la description)
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      placeholder: "04/11/2026"
+    validations:
+      required: true
+
+  - type: input
+    id: horaire
+    attributes:
+      label: Horaires (début et fin)
+      placeholder: "18h30 – 21h00"
+    validations:
+      required: true
+
+  - type: textarea
+    id: lieu
+    attributes:
+      label: Lieu
+      description: Nom du lieu et adresse complète. Si le lieu est une entreprise ou une école partenaire, ajoutez son site web.
+      placeholder: |
+        BPCE-SI, 13 bis avenue Albert 1er, 21000 Dijon
+        https://www.bpce-si.fr/
+    validations:
+      required: true
+
+  - type: input
+    id: inscription
+    attributes:
+      label: Lien d'inscription
+      placeholder: "https://my.weezevent.com/..."
+    validations:
+      required: false
+
+  - type: input
+    id: places
+    attributes:
+      label: Nombre de places
+      placeholder: "50 maximum"
+    validations:
+      required: false
+
+  - type: input
+    id: prix
+    attributes:
+      label: Prix
+      value: "Gratuit"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Ce qui se passe, pour qui, le programme. Des notes en vrac suffisent, Claude rédige l'article.
+    validations:
+      required: true
+
+  - type: textarea
+    id: intervenants
+    attributes:
+      label: Intervenantes et intervenants
+      description: Nom, entreprise, sujet, lien (LinkedIn, site…). Une personne par ligne.
+    validations:
+      required: false
+
+  - type: textarea
+    id: partenaires
+    attributes:
+      label: Partenaires et sponsors à citer
+      description: Avec l'adresse de leur site web (chaque partenaire cité a un lien dans l'article).
+    validations:
+      required: false
+
+  - type: textarea
+    id: images
+    attributes:
+      label: Images
+      description: Glissez-déposez ici les logos ou photos à utiliser dans les visuels (PNG ou JPEG de préférence).
+    validations:
+      required: false
+
+  - type: input
+    id: date-publication
+    attributes:
+      label: Date de publication souhaitée
+      description: Laisser vide pour publier dès que possible.
+      placeholder: "20/10/2026"
+    validations:
+      required: false
+
+  - type: input
+    id: auteur
+    attributes:
+      label: Signature de l'article
+      description: Nom affiché comme auteur ou autrice de l'article.
+      placeholder: "Prénom Nom"
+    validations:
+      required: true
+
+  - type: textarea
+    id: remarques
+    attributes:
+      label: Indications pour les visuels ou le texte
+      description: Ambiance, éléments à mettre en avant, choses à éviter…
+    validations:
+      required: false
