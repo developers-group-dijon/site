@@ -21,9 +21,12 @@ import subprocess
 import sys
 from pathlib import Path
 
+from commun import github
+
 RACINE = Path(__file__).resolve().parents[3]
 TRAVAIL = RACINE / ".publication"
 BASE = os.environ.get("PUBLICATION_BASE", "origin/main")
+BRANCHE_BASE = BASE.removeprefix("origin/")  # cible des Pull Requests
 
 
 def git(*args: str, cwd: Path = RACINE, verifier: bool = True) -> str:
@@ -75,6 +78,9 @@ def sha_distant(branche: str) -> str:
 def pousser(chemin: Path, branche: str, attendu: str) -> str:
     """Pousse HEAD sur la branche si personne ne l'a modifiée depuis `attendu`
     ("" : la branche ne doit pas exister). Renvoie le commit poussé."""
+    if github.ESSAI:
+        print(f"[essai] git push origin HEAD:{branche}", file=sys.stderr)
+        return git("rev-parse", "HEAD", cwd=chemin)
     git("push", "--quiet", f"--force-with-lease=refs/heads/{branche}:{attendu}", "origin",
         f"HEAD:refs/heads/{branche}", cwd=chemin)
     return git("rev-parse", "HEAD", cwd=chemin)
