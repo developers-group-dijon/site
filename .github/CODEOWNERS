@@ -1,0 +1,6 @@
+# Toute modification de l'outillage de publication (dont la liste des membres
+# autorisés à publier) et du dossier .github (workflows, formulaires d'issue,
+# ce fichier) demande la revue de ces personnes
+# (à condition d'activer « Require review from Code Owners » sur main).
+/scripts/publication/ @TheGuit
+/.github/ @TheGuit
