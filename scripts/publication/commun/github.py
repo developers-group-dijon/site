@@ -36,13 +36,25 @@ def ecrire(*args: str, entree: str | None = None) -> None:
     gh(*args, entree=entree)
 
 
-def labels(issue: int) -> set[str]:
-    donnees = json.loads(gh("issue", "view", str(issue), "--json", "labels"))
-    return {label["name"] for label in donnees["labels"]}
+def gh_json(*args: str):
+    return json.loads(gh(*args) or "null")
+
+
+def lire_issue(numero: int, champs: str) -> dict:
+    """Champs d'une issue, par exemple « title,body,comments »."""
+    return gh_json("issue", "view", str(numero), "--json", champs)
+
+
+def labels(numero: int) -> set[str]:
+    return {label["name"] for label in lire_issue(numero, "labels")["labels"]}
 
 
 def ajouter_label(issue: int, label: str) -> None:
     ecrire("issue", "edit", str(issue), "--add-label", label)
+
+
+def retirer_label(issue: int, label: str) -> None:
+    ecrire("issue", "edit", str(issue), "--remove-label", label)
 
 
 def commenter(issue: int, corps: str) -> None:
