@@ -17,7 +17,16 @@ Les règles de développement (zéro JavaScript, compatibilité mobile) et de r�
 
 Les membres de l'association peuvent demander la publication d'un événement ou d'une news sans toucher au code : ouvrez une issue avec le formulaire **Annoncer un événement** ou **Publier une news**, et remplissez les champs. Des notes en vrac suffisent pour la description.
 
-Un gardien automatique vérifie la demande et y répond avec les commandes de validation (`/visuel-site 2`, `/texte-site ok`, `/modifier-site titre plus court`…), à écrire en commentaire, une par ligne. Une commande acceptée reçoit un 👍 ; une commande refusée reçoit une réponse qui explique pourquoi.
+Un gardien automatique vérifie la demande et y répond avec les commandes de validation, à écrire en commentaire, une par ligne. Une commande acceptée reçoit un 👍 ; une commande refusée reçoit une réponse qui explique pourquoi. Ensuite :
+
+1. Une Pull Request en brouillon est ouverte, et Claude propose en commentaire **trois vignettes** pour la carte de l'article et le **texte de l'article**. Répondez par exemple :
+   - `/visuel-site 2` pour retenir la vignette 2 ;
+   - `/texte-site ok` pour valider le texte ;
+   - `/modifier-site titre plus court, fond rose` pour obtenir une nouvelle version.
+2. Une fois la vignette et le texte validés, ils sont enregistrés dans la Pull Request, et Claude propose **trois visuels carrés** et le **texte du post LinkedIn**. Mêmes commandes, avec `linkedin` : `/visuel-linkedin N`, `/texte-linkedin ok`, `/modifier-linkedin …`.
+3. Une fois LinkedIn validé, la Pull Request est nettoyée (deux commits, sans les propositions) et prête : elle est relue et mergée comme les autres.
+
+Les propositions arrivent quelques minutes après chaque demande ou commande : elles sont préparées automatiquement par GitHub Actions.
 
 Seules les personnes listées dans [`scripts/publication/membres.txt`](scripts/publication/membres.txt) peuvent demander une publication et la valider. Pour ajouter un membre, ouvrez une Pull Request sur ce fichier. Fonctionnement et installation : [`scripts/publication/README.md`](scripts/publication/README.md).
 
