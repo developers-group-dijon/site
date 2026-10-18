@@ -26,18 +26,24 @@ def gh(*args: str, entree: str | None = None) -> str:
     return res.stdout.strip()
 
 
-def ecrire(*args: str, entree: str | None = None) -> None:
-    """Comme gh(), pour une opération qui modifie le dépôt : simulée en mode essai."""
+def ecrire(*args: str, entree: str | None = None) -> str:
+    """Comme gh(), pour une opération qui modifie le dépôt : simulée en mode
+    essai (renvoie alors "")."""
     if ESSAI:
         print("[essai] gh", *args, file=sys.stderr)
         if entree:
             print(textwrap.indent(entree.rstrip(), "  │ "), file=sys.stderr)
-        return
-    gh(*args, entree=entree)
+        return ""
+    return gh(*args, entree=entree)
 
 
 def gh_json(*args: str):
     return json.loads(gh(*args) or "null")
+
+
+def nom_depot() -> str:
+    """« propriétaire/dépôt »."""
+    return gh("repo", "view", "--json", "nameWithOwner", "-q", ".nameWithOwner")
 
 
 def lire_issue(numero: int, champs: str) -> dict:
