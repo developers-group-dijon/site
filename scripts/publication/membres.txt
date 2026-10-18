@@ -1,0 +1,10 @@
+# Membres de l'association autorisés à demander une publication
+# et à valider les propositions (commandes /visuel-site, /texte-site…).
+#
+# Un identifiant GitHub par ligne, sans « @ ». La casse n'a pas d'importance.
+# Les lignes vides et celles qui commencent par « # » sont ignorées.
+#
+# La liste fait foi telle qu'elle est sur la branche main : la modifier
+# passe par une Pull Request (voir .github/CODEOWNERS).
+
+TheGuit
