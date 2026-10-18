@@ -1,0 +1,58 @@
+name: Publication — gardien
+
+# Filtre les demandes de publication (issues ouvertes avec les formulaires
+# « Annoncer un événement » et « Publier une news ») et les commandes de
+# validation en commentaire. Aucune IA ici : seulement des labels et des
+# réponses. Scripts : scripts/publication/ (voir son README).
+
+on:
+  issues:
+    types: [opened, reopened]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: publication-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  gardien:
+    # Uniquement les issues de publication (pas les Pull Requests),
+    # et pas les commentaires des bots.
+    if: >-
+      contains(github.event.issue.labels.*.name, 'publication')
+      && !github.event.issue.pull_request
+      && (github.event_name == 'issues' || github.event.comment.user.type != 'Bot')
+    runs-on: ubuntu-26.04
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      ISSUE: ${{ github.event.issue.number }}
+    steps:
+      # Les scripts et la liste des membres sont lus sur la branche par
+      # défaut (main), jamais depuis l'issue ou une autre branche.
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          sparse-checkout: scripts/publication
+          persist-credentials: false
+
+      # Contenus fournis par les utilisateurs et utilisatrices : passés en
+      # variables d'environnement, jamais interpolés dans le script.
+      - name: Accueillir la demande
+        if: github.event_name == 'issues'
+        env:
+          AUTEUR: ${{ github.event.issue.user.login }}
+        run: python3 scripts/publication/accueillir-issue.py "$ISSUE" "$AUTEUR"
+
+      - name: Vérifier les commandes du commentaire
+        if: github.event_name == 'issue_comment'
+        env:
+          AUTEUR: ${{ github.event.comment.user.login }}
+          COMMENTAIRE: ${{ github.event.comment.body }}
+          COMMENTAIRE_ID: ${{ github.event.comment.id }}
+        run: printf '%s' "$COMMENTAIRE" | python3 scripts/publication/verifier-commandes.py "$ISSUE" "$AUTEUR" "$COMMENTAIRE_ID"
