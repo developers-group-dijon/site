@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <!-- Exemple de visuel carré LinkedIn (1200 × 1200), décliné de la vignette du site :
+       mêmes couleurs, même titre, mise en page verticale, texte plus grand (lu sur mobile). -->
+  <defs>
+    <pattern id="trame" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="3" height="3" fill="#000" fill-opacity="0.15"/>
+      <rect x="3" y="3" width="3" height="3" fill="#000" fill-opacity="0.15"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="1200" fill="#212121"/>
+  <rect width="1200" height="1200" fill="url(#trame)"/>
+
+  <!-- Motif décoratif en bas à droite -->
+  <g shape-rendering="crispEdges">
+    <rect x="720" y="1040" width="480" height="160" fill="#9a1a41"/>
+    <rect x="800" y="960" width="400" height="80" fill="#a8284f"/>
+    <rect x="880" y="880" width="320" height="80" fill="#b3345b"/>
+    <rect x="960" y="800" width="240" height="80" fill="#c2456a"/>
+    <rect x="1040" y="720" width="160" height="80" fill="#ffb7c1"/>
+    <rect x="1120" y="640" width="80" height="80" fill="#ffd93d"/>
+    <rect x="720" y="720" width="480" height="480" fill="url(#trame)"/>
+  </g>
+
+  <text x="90" y="190" font-family="Bitcount Grid Single" font-weight="500" font-size="44" fill="#ffd93d" letter-spacing="2">MEETUP</text>
+
+  <text font-family="Bitcount Grid Single" font-weight="700" font-size="130" fill="#c2456a">
+    <tspan x="84" y="340">Titre</tspan>
+    <tspan x="84" y="470">court</tspan>
+  </text>
+
+  <text font-family="Noto Sans" font-size="44" fill="#ffffff">
+    <tspan x="90" y="600" font-weight="300">Une phrase d'accroche</tspan>
+    <tspan x="90" y="660" font-weight="700">en deux lignes.</tspan>
+  </text>
+
+  <rect x="90" y="760" width="560" height="72" fill="#ffd93d"/>
+  <text x="114" y="810" font-family="Bitcount Grid Single" font-weight="500" font-size="38" fill="#212121">JEU. 12 NOV. · 18H30</text>
+
+  <image x="90" y="1060" width="207" height="90" xlink:href="../ressources/logo-dgd-blanc.png"/>
+</svg>
