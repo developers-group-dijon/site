@@ -1,0 +1,31 @@
+---
+title: "Le DevFest Dijon recherche des bénévoles"
+date: 2026-10-18T19:59:19+02:00
+slug: "recherche-benevoles-devfest"
+categories: ["news"]
+auteur: "Guillaume Poittevin"
+summary: "Nous cherchons 4 bénévoles pour la bonne tenue des conférences du DevFest : micro pour les questions, gestion du temps, dans un amphi pour la journée. Votre place est offerte."
+image: "recherche-benevoles-devfest.webp"
+---
+
+Pour la bonne tenue des conférences du https://devfest.developers-group-dijon.fr/[DevFest Dijon 2026], qui a lieu le **4 décembre 2026**, le Developers Group Dijon cherche **4 bénévoles**.
+
+Votre présence est attendue **de 7h45 à 18h**.
+
+== Votre rôle
+
+Un amphi vous est attribué pour toute la journée et vous aidez à ce que les conférences se déroulent bien :
+
+* faire passer le micro pour les questions du public ;
+* gérer le temps des interventions ;
+* et tout ce qui contribue au bon déroulement des conférences.
+
+== En échange
+
+Votre place est offerte.
+
+NOTE: Vous ne choisissez pas les conférences que vous suivez : un amphi est attribué à chaque bénévole pour la journée.
+
+== Se porter volontaire
+
+Pour vous porter volontaire, envoyez un e-mail à mailto:developers.group.dijon@gmail.com[developers.group.dijon@gmail.com].
