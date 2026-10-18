@@ -62,8 +62,8 @@ def ressemble(corps: str) -> bool:
     return RESSEMBLANCE.search(corps) is not None
 
 
-def erreur(commande: Commande, etape_en_cours: str) -> str | None:
-    """Pourquoi la commande est ignorée, ou None si elle est valide."""
+def erreur_syntaxe(commande: Commande) -> str | None:
+    """Ce qui ne va pas dans l'argument de la commande, ou None."""
     c = commande
     if c.verbe == "visuel" and c.argument not in ("1", "2", "3"):
         return f"`{c.ligne}` : indiquez le numéro de la proposition (1, 2 ou 3)."
@@ -72,6 +72,13 @@ def erreur(commande: Commande, etape_en_cours: str) -> str | None:
     if c.verbe == "modifier" and not c.argument:
         return (f"`{c.ligne}` : ajoutez la consigne après la commande, "
                 f"par exemple `/modifier-{c.etape} titre plus court, fond rose`.")
-    if c.etape != etape_en_cours:
-        return f"`{c.ligne}` : {HORS_ETAPE[etape_en_cours]}"
+    return None
+
+
+def erreur(commande: Commande, etape_en_cours: str) -> str | None:
+    """Pourquoi la commande est ignorée (syntaxe, puis étape), ou None si elle est valide."""
+    if probleme := erreur_syntaxe(commande):
+        return probleme
+    if commande.etape != etape_en_cours:
+        return f"`{commande.ligne}` : {HORS_ETAPE[etape_en_cours]}"
     return None

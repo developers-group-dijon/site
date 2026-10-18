@@ -26,23 +26,41 @@ def gh(*args: str, entree: str | None = None) -> str:
     return res.stdout.strip()
 
 
-def ecrire(*args: str, entree: str | None = None) -> None:
-    """Comme gh(), pour une opération qui modifie le dépôt : simulée en mode essai."""
+def ecrire(*args: str, entree: str | None = None) -> str:
+    """Comme gh(), pour une opération qui modifie le dépôt : simulée en mode
+    essai (renvoie alors "")."""
     if ESSAI:
         print("[essai] gh", *args, file=sys.stderr)
         if entree:
             print(textwrap.indent(entree.rstrip(), "  │ "), file=sys.stderr)
-        return
-    gh(*args, entree=entree)
+        return ""
+    return gh(*args, entree=entree)
 
 
-def labels(issue: int) -> set[str]:
-    donnees = json.loads(gh("issue", "view", str(issue), "--json", "labels"))
-    return {label["name"] for label in donnees["labels"]}
+def gh_json(*args: str):
+    return json.loads(gh(*args) or "null")
+
+
+def nom_depot() -> str:
+    """« propriétaire/dépôt »."""
+    return gh("repo", "view", "--json", "nameWithOwner", "-q", ".nameWithOwner")
+
+
+def lire_issue(numero: int, champs: str) -> dict:
+    """Champs d'une issue, par exemple « title,body,comments »."""
+    return gh_json("issue", "view", str(numero), "--json", champs)
+
+
+def labels(numero: int) -> set[str]:
+    return {label["name"] for label in lire_issue(numero, "labels")["labels"]}
 
 
 def ajouter_label(issue: int, label: str) -> None:
     ecrire("issue", "edit", str(issue), "--add-label", label)
+
+
+def retirer_label(issue: int, label: str) -> None:
+    ecrire("issue", "edit", str(issue), "--remove-label", label)
 
 
 def commenter(issue: int, corps: str) -> None:
