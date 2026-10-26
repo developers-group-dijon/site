@@ -4,11 +4,13 @@ name: Publication — gardien
 # « Annoncer un événement » et « Publier une news ») et les commandes de
 # validation en commentaire. Aucune IA ici : seulement des labels et des
 # réponses. Quand une demande ou une commande est acceptée, le job
-# « traiter » lance publication.yml. Scripts : scripts/publication/.
+# « traiter » lance publication.yml. Quand GitHub ferme l'issue au merge de
+# sa Pull Request, le job « publiee » pose « publication:publiee ».
+# Scripts : scripts/publication/.
 
 on:
   issues:
-    types: [opened, reopened]
+    types: [opened, reopened, closed]
   issue_comment:
     types: [created]
 
@@ -23,6 +25,7 @@ jobs:
     if: >-
       contains(github.event.issue.labels.*.name, 'publication')
       && !github.event.issue.pull_request
+      && github.event.action != 'closed'
       && (github.event_name == 'issues' || github.event.comment.user.type != 'Bot')
     runs-on: ubuntu-26.04
     # Un seul gardien à la fois par issue.
@@ -75,3 +78,25 @@ jobs:
     with:
       issue: ${{ format('{0}', github.event.issue.number) }}
     secrets: inherit
+
+  # Fermée comme terminée (le « Closes #N » de la Pull Request ou du commit
+  # « Annonce » au merge dans main) alors qu'elle était prête : publiée.
+  publiee:
+    if: >-
+      github.event.action == 'closed'
+      && github.event.issue.state_reason == 'completed'
+      && contains(github.event.issue.labels.*.name, 'publication:prete')
+    runs-on: ubuntu-26.04
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      ISSUE: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          sparse-checkout: scripts/publication
+          persist-credentials: false
+
+      - name: Marquer la demande comme publiée
+        run: python3 scripts/publication/marquer-publiee.py "$ISSUE"
