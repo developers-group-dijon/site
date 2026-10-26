@@ -61,7 +61,9 @@ def ouvrir_pr(issue: dict, publication: dict, meta: dict) -> int:
         f"sont dans `{dossier}/propositions/` et se valident dans l'issue. "
         "Une fois LinkedIn validé, l'historique est réécrit en deux commits (article, puis "
         "LinkedIn), les propositions sont retirées et la Pull Request passe en « prête ».\n\n"
-        "Pensez à vérifier la date de publication souhaitée dans l'issue avant de merger.\n"
+        "Pensez à vérifier la date de publication souhaitée dans l'issue avant de merger.\n\n"
+        # Ferme l'issue au merge ; le gardien la marque alors « publication:publiee ».
+        f"Closes #{issue['numero']}\n"
     )
     url = github.ecrire("pr", "create", "--draft", "--base", depot.BRANCHE_BASE, "--head", publication["branche"],
                         "--title", meta.get("titre") or issue["titre"], "--label", "publication",

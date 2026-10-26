@@ -17,6 +17,9 @@ traitement (publication.yml) : traiter-issue.py, une étape par passage
   ├─ site validé    → vignette enregistrée, 3 visuels LinkedIn + texte du post
   │                   /visuel-linkedin N + /texte-linkedin ok
   └─ linkedin validé → PR réécrite en 2 commits, prête à merger
+  │
+  ▼
+merge de la PR → « Closes #N » ferme l'issue → gardien : publication:publiee
 ```
 
 ## Principe
@@ -31,6 +34,7 @@ Aucune dépendance Python hors de la bibliothèque standard.
 |---|---|
 | `accueillir-issue.py ISSUE AUTEUR` | Nouvelle demande : membre → `publication:a-traiter` et liste des commandes ; sinon `publication:refusee`. Affiche `a-traiter` ou `refusee` |
 | `verifier-commandes.py ISSUE AUTEUR COMMENTAIRE_ID < commentaire` | Commandes en commentaire : une commande valide pose `publication:a-traiter` et reçoit un 👍, une commande ignorée reçoit une explication. Affiche `a-traiter` si le label est posé |
+| `marquer-publiee.py ISSUE` | Issue fermée au merge de sa PR : remplace `publication:prete` par `publication:publiee` et indique où trouver le post LinkedIn. Affiche `publiee` ou `ignoree` |
 | `creer-labels.py` | Crée ou met à jour les labels du dépôt |
 
 ### Le traitement
@@ -74,7 +78,7 @@ Autour du dossier :
 | Fichier | Rôle |
 |---|---|
 | `.github/ISSUE_TEMPLATE/evenement.yml`, `news.yml` | Formulaires d'issue, avec les labels `publication` et `type:…` |
-| `.github/workflows/publication-gardien.yml` | Lance `accueillir-issue.py` à l'ouverture d'une issue de publication, `verifier-commandes.py` à chaque commentaire, puis le traitement si l'un d'eux affiche `a-traiter` |
+| `.github/workflows/publication-gardien.yml` | Lance `accueillir-issue.py` à l'ouverture d'une issue de publication, `verifier-commandes.py` à chaque commentaire, puis le traitement si l'un d'eux affiche `a-traiter` ; `marquer-publiee.py` quand l'issue est fermée comme terminée |
 | `.github/workflows/publication.yml` | Lance `traiter-issue.py` sur un runner ; relançable à la main depuis l'onglet Actions |
 | `.github/CODEOWNERS` | Soumet à revue toute modification de ce dossier et de `.github/` |
 
@@ -88,7 +92,7 @@ Autour du dossier :
 | `publication:site` | traitement | PR en brouillon, propositions pour le site en attente de validation |
 | `publication:linkedin` | traitement | Vignette et texte enregistrés, propositions LinkedIn en attente de validation |
 | `publication:prete` | traitement | PR réécrite et prête à être relue et mergée |
-| `publication:publiee` | après déploiement | Site publié, issue close |
+| `publication:publiee` | gardien, à la fermeture | PR mergée, issue fermée par GitHub |
 
 Le gardien déduit l'étape en cours de ces labels (`commun/etapes.py`) : une commande `/…-site` n'est acceptée qu'à l'étape `site`, une commande `/…-linkedin` qu'à l'étape `linkedin`.
 
@@ -113,7 +117,9 @@ content/posts/2026-10-18-mon-slug/
 - Chaque push publie la branche sur le site de test (comportement du workflow Site) : on y voit l'article avec sa vignette, provisoire puis retenue.
 - Hugo publie aussi les fichiers de `propositions/` avec la page, sans les utiliser : c'est sans conséquence et ils disparaissent à la finalisation.
 
-**À la validation de LinkedIn**, `finaliser-pr.py` réécrit la branche à partir du `main` à jour, en deux commits : « Annonce : … » (`index.adoc` et la vignette WebP), puis « LinkedIn : visuel et texte du post » (`linkedin.png` et `linkedin.txt` dans le même dossier). Le dossier `propositions/` disparaît, la branche est poussée avec `--force-with-lease` et la PR passe en « prête ». Elle est alors fusionnable en fast-forward. Les images des anciennes propositions dans l'issue peuvent cesser de s'afficher après cette réécriture : elles ne servent plus.
+**À la validation de LinkedIn**, `finaliser-pr.py` réécrit la branche à partir du `main` à jour, en deux commits : « Annonce : … » (`index.adoc` et la vignette WebP), puis « LinkedIn : visuel et texte du post » (`linkedin.png` et `linkedin.txt` dans le même dossier). Le dossier `propositions/` disparaît, la branche est poussée avec `--force-with-lease` et la PR passe en « prête ». Elle est alors fusionnable en fast-forward.
+
+**Au merge**, GitHub ferme l'issue grâce au `Closes #N` présent dans la description de la PR et dans le message du commit « Annonce » (ce dernier suffit si la branche est fusionnée en fast-forward par un push sur `main`). Le gardien voit l'issue fermée comme terminée à l'étape `prete` et pose `publication:publiee`. Une issue fermée à la main en cours de route n'est pas marquée. Les images des anciennes propositions dans l'issue peuvent cesser de s'afficher après cette réécriture : elles ne servent plus.
 
 ## Ce que fait Claude, et ce qu'il ne fait pas
 

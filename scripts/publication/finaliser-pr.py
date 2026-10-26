@@ -76,7 +76,10 @@ def main() -> None:
         for fichier in ("index.adoc", f"{slug}.webp"):
             shutil.copyfile(garde / fichier, dossier / fichier)
         depot.commiter(copie, f"Annonce : {meta.get('titre') or issue['titre']}\n\n"
-                              f"Rédigée à partir de l'issue #{numero}.\n", relatif)
+                              f"Rédigée à partir de l'issue #{numero}.\n\n"
+                              # Ferme l'issue quand le commit arrive sur main, même
+                              # par un merge fast-forward poussé à la main.
+                              f"Closes #{numero}\n", relatif)
         for fichier in (LINKEDIN_VISUEL, LINKEDIN_TEXTE):
             shutil.copyfile(garde / fichier, dossier / fichier)
         depot.commiter(copie, f"LinkedIn : visuel et texte du post\n\nValidés dans l'issue #{numero}.\n", relatif)

@@ -25,6 +25,7 @@ Un gardien automatique vérifie la demande et y répond avec les commandes de va
    - `/modifier-site titre plus court, fond rose` pour obtenir une nouvelle version.
 2. Une fois la vignette et le texte validés, ils sont enregistrés dans la Pull Request, et Claude propose **trois visuels carrés** et le **texte du post LinkedIn**. Mêmes commandes, avec `linkedin` : `/visuel-linkedin N`, `/texte-linkedin ok`, `/modifier-linkedin …`.
 3. Une fois LinkedIn validé, la Pull Request est nettoyée (deux commits, sans les propositions) et prête : elle est relue et mergée comme les autres.
+4. Au merge, l'issue est fermée automatiquement et marquée « publiée ». Le visuel et le texte du post LinkedIn sont alors dans le dossier de l'article (`linkedin.png` et `linkedin.txt`).
 
 Les propositions arrivent quelques minutes après chaque demande ou commande : elles sont préparées automatiquement par GitHub Actions.
 
