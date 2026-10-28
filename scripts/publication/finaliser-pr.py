@@ -7,7 +7,8 @@ Usage : finaliser-pr.py ISSUE
 copie de travail de la branche (preparer-issue.py). Réécrit la branche à
 partir de la base à jour, en deux commits sans les propositions :
 
-1. « Annonce : <titre> » : index.adoc et la vignette <slug>.webp ;
+1. « Annonce : <titre> » : index.adoc, la vignette <slug>.webp et les images
+   de l'issue citées dans l'article ;
 2. « LinkedIn : visuel et texte du post » : linkedin.png et linkedin.txt.
 
 Construit le site si Hugo est installé (la CI le fait de toute façon), pousse
@@ -23,7 +24,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-from commun import depot, etat, github, propositions, visuels
+from commun import depot, etat, github, images, propositions, visuels
 
 LINKEDIN_VISUEL = "linkedin.png"
 LINKEDIN_TEXTE = "linkedin.txt"
@@ -58,11 +59,13 @@ def main() -> None:
     dossier = copie / relatif
     meta = propositions.meta(dossier / "propositions/site")
     slug = meta["slug"]
+    adoc = (dossier / "index.adoc").read_text(encoding="utf-8")
+    annonce = ["index.adoc", f"{slug}.webp", *images.placer(adoc, dossier / "propositions/entree", dossier)]
 
     with tempfile.TemporaryDirectory() as nom:
         garde = Path(nom)
-        shutil.copyfile(dossier / "index.adoc", garde / "index.adoc")
-        shutil.copyfile(dossier / f"{slug}.webp", garde / f"{slug}.webp")
+        for fichier in annonce:
+            shutil.copyfile(dossier / fichier, garde / fichier)
         visuels.rendre(dossier / "propositions/linkedin" / propositions.visuel("linkedin", visuel),
                        garde / LINKEDIN_VISUEL)
         shutil.copyfile(dossier / "propositions/linkedin/texte.txt", garde / LINKEDIN_TEXTE)
@@ -73,7 +76,7 @@ def main() -> None:
         if dossier.exists():
             sys.exit(f"{relatif} existe déjà sur {depot.BASE} : à régler à la main")
         dossier.mkdir(parents=True)
-        for fichier in ("index.adoc", f"{slug}.webp"):
+        for fichier in annonce:
             shutil.copyfile(garde / fichier, dossier / fichier)
         depot.commiter(copie, f"Annonce : {meta.get('titre') or issue['titre']}\n\n"
                               f"Rédigée à partir de l'issue #{numero}.\n\n"

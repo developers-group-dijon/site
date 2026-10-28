@@ -67,6 +67,7 @@ Dans l'ordre où `traiter-issue.py` les enchaîne :
 | `commun/propositions.py` | Fichiers attendus d'une proposition, empreintes |
 | `commun/article.py` | Champs du front matter |
 | `commun/visuels.py` | Rendu et contrôle des SVG |
+| `commun/images.py` | Images de l'issue citées dans l'article : contrôle et conversion en WebP |
 | `membres.txt` | Membres autorisés à publier (identifiants GitHub), lus sur `main` uniquement |
 | `prompts/` | Consignes données à Claude pour le site et pour LinkedIn |
 | `charte.md`, `exemples/` | Charte graphique des visuels et gabarits SVG commentés |
@@ -105,6 +106,7 @@ Dès le premier passage, `publier-propositions.py` crée la branche `evenement/<
 ```
 content/posts/2026-10-18-mon-slug/
   index.adoc              texte proposé, puis validé (vignette provisoire : proposition 1)
+  image-2.webp            image de l'issue citée dans l'article (image::image-2.webp[…])
   mon-slug.webp           vignette retenue (après /visuel-site N + /texte-site ok)
   propositions/
     site/                 proposition-1..3.svg/.png, meta.json
@@ -117,7 +119,7 @@ content/posts/2026-10-18-mon-slug/
 - Chaque push publie la branche sur le site de test (comportement du workflow Site) : on y voit l'article avec sa vignette, provisoire puis retenue.
 - Hugo publie aussi les fichiers de `propositions/` avec la page, sans les utiliser : c'est sans conséquence et ils disparaissent à la finalisation.
 
-**À la validation de LinkedIn**, `finaliser-pr.py` réécrit la branche à partir du `main` à jour, en deux commits : « Annonce : … » (`index.adoc` et la vignette WebP), puis « LinkedIn : visuel et texte du post » (`linkedin.png` et `linkedin.txt` dans le même dossier). Le dossier `propositions/` disparaît, la branche est poussée avec `--force-with-lease` et la PR passe en « prête ». Elle est alors fusionnable en fast-forward.
+**À la validation de LinkedIn**, `finaliser-pr.py` réécrit la branche à partir du `main` à jour, en deux commits : « Annonce : … » (`index.adoc`, la vignette WebP et les images de l'issue citées dans l'article), puis « LinkedIn : visuel et texte du post » (`linkedin.png` et `linkedin.txt` dans le même dossier). Le dossier `propositions/` disparaît, la branche est poussée avec `--force-with-lease` et la PR passe en « prête ». Elle est alors fusionnable en fast-forward.
 
 **Au merge**, GitHub ferme l'issue grâce au `Closes #N` présent dans la description de la PR et dans le message du commit « Annonce » (ce dernier suffit si la branche est fusionnée en fast-forward par un push sur `main`). Le gardien voit l'issue fermée comme terminée à l'étape `prete` et pose `publication:publiee`. Une issue fermée à la main en cours de route n'est pas marquée. Les images des anciennes propositions dans l'issue peuvent cesser de s'afficher après cette réécriture : elles ne servent plus.
 
@@ -172,6 +174,7 @@ Utile pour tester une modification avant le merge, ou si Actions n'est pas confi
 - **Python 3.10+**, **git** et la **[GitHub CLI](https://cli.github.com/)** connectée avec un compte présent dans `membres.txt` (`gh auth login`) : ses commentaires et sa PR sont alors à son nom ;
 - **[Claude Code](https://code.claude.com/)** connecté (`claude auth login`) : l'abonnement de la personne qui lance le script est utilisé ;
 - **[resvg](https://github.com/linebender/resvg/releases)** et **cwebp** (paquet `webp`) ou ImageMagick ;
+- **ImageMagick**, pour les photos de l'issue insérées dans l'article (sans lui, cwebp les convertit sans les redresser ni les réduire) ;
 - facultatif : **Hugo** et **Asciidoctor**, pour construire le site avant la finalisation (sinon la CI s'en charge).
 
 ```sh
@@ -197,6 +200,7 @@ Le dossier `.publication/` (ignoré par git) contient les copies de travail, le 
 - Vignette du site : SVG 1600 × 900 rendu en WebP dans le dossier de l'article (`image:` du front matter).
 - Carré LinkedIn : SVG 1200 × 1200 rendu en PNG (`linkedin.png`), avec le texte du post (`linkedin.txt`), dans le dossier de l'article.
 - Polices : instances statiques des polices du site (`static/fonts/`) au format TTF, lisible par resvg. Bitcount Grid Single est figée sur l'axe `ELSH` 50 (pixels carrés, comme sur le site) en graisses 400, 500 et 700. Licence SIL Open Font License 1.1.
+- Images dans l'article : Claude cite une image fournie `entree/image-N.jpg` sous la forme `image::image-N.webp[texte alternatif]`. `controler-propositions.py` refuse toute autre image ; `publier-propositions.py` et `finaliser-pr.py` la convertissent dans le dossier de l'article avec ImageMagick : redressée selon l'orientation de l'appareil, 1200 px de large au plus, **sans métadonnées** (la position GPS des photos de téléphone n'est pas publiée).
 - Pour faire évoluer le style, modifier `charte.md` et les gabarits de `exemples/` : Claude les lit à chaque proposition.
 
 ```sh
