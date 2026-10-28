@@ -9,7 +9,8 @@ article/N-slug) et son dossier content/posts/AAAA-MM-JJ-slug/.
 
 1. Copie les propositions dans le dossier de la publication, sous
    propositions/ ; pour le site, le texte proposé devient l'article, avec la
-   proposition 1 comme vignette provisoire (aperçu sur le site de test).
+   proposition 1 comme vignette provisoire (aperçu sur le site de test), et
+   les images de l'issue qu'il cite sont converties en WebP à côté de lui.
 2. Commite et pousse la branche.
 3. Au premier passage, ouvre la Pull Request en brouillon.
 4. Commente l'issue : visuels (liens figés sur le commit), texte, questions
@@ -22,7 +23,7 @@ import datetime as dt
 import shutil
 import sys
 
-from commun import article, depot, etat, github, propositions
+from commun import article, depot, etat, github, images, propositions
 
 
 def creer_branche(issue: dict, copie, slug: str) -> dict:
@@ -42,6 +43,7 @@ def ranger(etape: str, sortie, dossier_article, travail) -> None:
     shutil.copytree(sortie, cible / etape, ignore=shutil.ignore_patterns("index.adoc", "_*"))
     if etape == "site":
         adoc = (sortie / "index.adoc").read_text(encoding="utf-8")
+        images.placer(adoc, travail / "entree", dossier_article)
         adoc = article.remplacer_champ(adoc, "image", '"propositions/site/proposition-1.png"')
         (dossier_article / "index.adoc").write_text(adoc, encoding="utf-8")
 

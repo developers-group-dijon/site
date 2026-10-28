@@ -76,12 +76,12 @@ jobs:
           git config --global user.name "$BOT"
           git config --global user.email "$id+$BOT@users.noreply.github.com"
 
-      - name: Installer Claude Code, resvg et cwebp
+      - name: Installer Claude Code, resvg, cwebp et ImageMagick
         run: |
           npm install --global @anthropic-ai/claude-code@stable
           curl -fsSL https://github.com/linebender/resvg/releases/download/v0.48.1/resvg-linux-x86_64.tar.gz \
             | sudo tar -xz -C /usr/local/bin resvg
-          sudo apt-get update && sudo apt-get install -y webp
+          sudo apt-get update && sudo apt-get install -y webp imagemagick
           claude --version
           resvg --version
 

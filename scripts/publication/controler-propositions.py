@@ -6,8 +6,9 @@ Usage : controler-propositions.py ETAPE DOSSIER
 DOSSIER contient les fichiers produits par Claude pour ETAPE (site ou
 linkedin, voir commun/propositions.py). Supprime les brouillons (« _* »),
 vérifie que les fichiers attendus sont là, que meta.json est lisible (avec un
-slug valide pour le site) et que chaque SVG est sûr, puis rend chaque visuel
-en PNG à côté de son SVG.
+slug valide pour le site), que chaque SVG est sûr et que l'article ne cite
+que des images fournies dans l'issue (../entree/, voir commun/images.py),
+puis rend chaque visuel en PNG à côté de son SVG.
 
 Affiche les rendus produits ; s'arrête avec un message au premier problème.
 """
@@ -16,7 +17,7 @@ import json
 import sys
 from pathlib import Path
 
-from commun import propositions, visuels
+from commun import images, propositions, visuels
 
 
 def main() -> None:
@@ -34,6 +35,10 @@ def main() -> None:
         sys.exit(f"meta.json illisible : {exc}")
     if etape == "site" and not propositions.SLUG.fullmatch(meta.get("slug") or ""):
         sys.exit(f"slug invalide dans meta.json : {meta.get('slug')!r}")
+    if etape == "site":
+        adoc = (dossier / propositions.TEXTE["site"]).read_text(encoding="utf-8")
+        if erreurs := images.problemes(adoc, dossier.parent / "entree"):
+            sys.exit("index.adoc : " + " ; ".join(erreurs))
 
     svgs = [dossier / propositions.visuel(etape, i) for i in propositions.NUMEROS]
     for svg in svgs:

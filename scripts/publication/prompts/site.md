@@ -34,6 +34,7 @@ Dans le dossier `{{SORTIE}}` (et nulle part ailleurs) :
 - `auteur:` : la signature indiquée dans l'issue.
 - **N'invente rien** : ni date, ni horaire, ni adresse, ni URL, ni nom, ni chiffre. Une information absente reste absente du texte (ou en commentaire Asciidoc `// À compléter : …`) et devient une question dans `meta.json`.
 - Les liens d'inscription vont dans le bloc `evenement` (bouton automatique) ; inutile de répéter les infos pratiques dans le texte.
+- **Images de l'issue dans l'article** : pour insérer une image fournie `../entree/image-N.ext`, écris `image::image-N.webp[texte alternatif]`, avec le même nom, l'extension `.webp` et sans chemin. Les scripts la convertissent et la placent à côté de l'article. Insère les images utiles au texte (photos de l'événement, des intervenantes et intervenants…), à l'endroit où elles éclairent le propos ; jamais une image absente de la liste ci-dessous, ni une image distante. Le texte alternatif décrit ce que montre l'image ; il ne nomme une personne que si l'issue permet de l'identifier.
 
 ## Règles pour les visuels
 
