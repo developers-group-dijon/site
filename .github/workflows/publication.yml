@@ -92,6 +92,8 @@ jobs:
           PUBLICATION_BOT: ${{ steps.app.outputs.app-slug }}[bot]
           # Vide : modèle par défaut de generer-propositions.py (sonnet).
           PUBLICATION_MODELE: ${{ vars.PUBLICATION_MODELE }}
+          # Heure de Paris pour le champ « date » des articles (le runner est en UTC).
+          TZ: Europe/Paris
           ISSUE: ${{ inputs.issue }}
         run: |
           # $ISSUE vide : toutes les issues « publication:a-traiter ».
