@@ -8,7 +8,7 @@ image: "ia-seniors-act-ia-bfc.webp"
 summary: "Le jeudi 22 octobre 2026, à la résidence seniors Montana de Dijon, ACT.IA-BFC et un membre de l'association ont présenté l'intelligence artificielle : son histoire, son impact et les bons réflexes."
 ---
 
-Le *jeudi 22 octobre 2026*, la https://www.residences-montana.com/fr/vos-montana/montana-dijon[résidence seniors Montana], à Dijon, a accueilli une conférence d'introduction à l'intelligence artificielle. Au micro, deux intervenants : Alexis Martinot, de https://www.linkedin.com/company/actiabfc/home/[*ACT.IA-BFC*], et Michel Girard, du https://diiage.cucdb.fr/[CUCDB] et membre du Developers Group Dijon.
+Le *jeudi 22 octobre 2026*, la https://www.residences-montana.com/fr/vos-montana/montana-dijon[résidence seniors Montana], à Dijon, a accueilli une conférence d'introduction à l'intelligence artificielle. Au micro, deux intervenants : Alexis Martinot, de https://www.linkedin.com/company/actiabfc/home/[*ACT.IA-BFC*], et Michel Girard, du https://www.linkedin.com/company/groupe-saint-benigne/[Groupe Saint-Bénigne] et membre du Developers Group Dijon.
 
 == Une conférence pour comprendre l'IA
 

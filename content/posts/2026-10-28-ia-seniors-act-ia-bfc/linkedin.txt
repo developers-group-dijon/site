@@ -4,7 +4,7 @@ Le jeudi 22 octobre 2026, la résidence seniors Montana, à Dijon, a accueilli u
 
 Au programme : qu'est-ce que l'IA, d'où vient-elle, quel est son impact dans le quotidien, bénéfique comme néfaste, et à quoi faire attention quand on l'utilise. Un quiz a rendu le sujet bien vivant.
 
-🎤 Au micro : Alexis Martinot, d'ACT.IA-BFC, et Michel Girard, du CUCDB et membre du Developers Group Dijon.
+🎤 Au micro : Alexis Martinot, d'ACT.IA-BFC, et Michel Girard, du groupe Saint-Bénigne et membre du Developers Group Dijon.
 
 Collaborer avec les autres associations de notre région et vulgariser l'informatique auprès du grand public : c'est l'une des missions de notre association.
 

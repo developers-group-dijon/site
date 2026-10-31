@@ -25,7 +25,7 @@ image::equipe.webp[L'équipe du Developers Group Dijon]
 * Xavier Calland, Atol CD
 * Mathilde Couenne, Alteca
 * Yoann Rouquié, APRR
-* Michel Girard, DIIAGE
+* Michel Girard, groupe Saint-Bénigne
 * Guillaume Poittevin, Capgemini
 
 [#rejoignez-nous]
