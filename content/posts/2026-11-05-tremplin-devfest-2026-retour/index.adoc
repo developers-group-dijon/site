@@ -1,0 +1,36 @@
+---
+title: "Tremplin DevFest 2026 : les deux talks retenus"
+date: 2026-11-05T15:47:20+01:00
+slug: "tremplin-devfest-2026-retour"
+categories: ["news"]
+auteur: "Guillaume Poittevin"
+image: "tremplin-devfest-2026-retour.webp"
+summary: "Le Tremplin du DevFest Dijon 2026 a eu lieu le 4 novembre. À l'issue de la soirée, deux talks ont été sélectionnés : « Relation toxique avec sa base de données : 6 comportements à éviter » et « Rendre l'implicite explicite »."
+---
+
+Le https://www.developers-group-dijon.fr/tremplin-devfest-2026/[Tremplin du DevFest 2026] a eu lieu le 4 novembre, comme annoncé. Quatre speakers sont montés sur scène pour présenter leur talk, et à l'issue de la soirée, deux d'entre eux ont été sélectionnés.
+
+image::image-1.webp[La salle écoute un speaker présenter son talk devant un grand écran, lors de la soirée du Tremplin]
+
+== Les deux talks sélectionnés
+
+* *Relation toxique avec sa base de données : 6 comportements à éviter*, par Léo Jacquemin
+* *Rendre l'implicite explicite*, par Thomas Hodson
+
+Bravo à eux !
+
+image::image-3.webp[Léo Jacquemin devant un écran présentant PostgreSQL, face au public]
+
+image::image-4.webp[Thomas Hodson devant un écran listant des bugs aux conséquences dramatiques]
+
+Ces deux talks seront présentés au DevFest Dijon 2026, le vendredi 4 décembre. Les places sont ouvertes : rendez-vous sur le https://devfest.developers-group-dijon.fr/[site du DevFest Dijon] pour vous inscrire.
+
+== Merci !
+
+Merci aux quatre speakers d'avoir joué le jeu de cette première scène. Merci aussi aux coachs, qui les ont accompagnés dans la préparation de leur talk, et à https://craftsrecords.org/[Crafts Records], qui a porté ce coaching.
+
+Merci enfin à https://www.bpce-si.fr/[BPCE-SI] pour son accueil.
+
+image::image-2.webp[Un speaker présente la documentation d'un framework sur l'écran, devant le public et le matériel de captation]
+
+image::image-5.webp[Trois personnes debout devant l'écran, où s'affiche le titre d'un talk sur le traitement documentaire avec des LLM, face au public]
