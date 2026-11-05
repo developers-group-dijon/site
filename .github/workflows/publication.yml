@@ -76,12 +76,20 @@ jobs:
           git config --global user.name "$BOT"
           git config --global user.email "$id+$BOT@users.noreply.github.com"
 
+      # Le miroir Ubuntu peut ralentir au point de bloquer l'étape un quart
+      # d'heure : sans les paquets recommandés (Ghostscript, polices…), il y a
+      # moins à télécharger, et un téléchargement qui stagne est relancé. Si le
+      # miroir reste en panne, l'étape échoue vite et l'échec est signalé dans
+      # l'issue.
       - name: Installer Claude Code, resvg, cwebp et ImageMagick
+        timeout-minutes: 5
         run: |
           npm install --global @anthropic-ai/claude-code@stable
-          curl -fsSL https://github.com/linebender/resvg/releases/download/v0.48.1/resvg-linux-x86_64.tar.gz \
+          curl -fsSL --retry 3 https://github.com/linebender/resvg/releases/download/v0.48.1/resvg-linux-x86_64.tar.gz \
             | sudo tar -xz -C /usr/local/bin resvg
-          sudo apt-get update && sudo apt-get install -y webp imagemagick
+          apt="-o Acquire::Retries=3 -o Acquire::http::Timeout=20"
+          sudo apt-get $apt update
+          sudo apt-get $apt install -y --no-install-recommends webp imagemagick
           claude --version
           resvg --version
 
